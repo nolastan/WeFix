@@ -8,7 +8,11 @@
 		#container.wide
 			%header
 				%h1 WeFix
-				%h2 crowdfunded community action
+				%h2
+					- if(cookies[:user_id] != nil)
+						= "Logged in as " + User.find(cookies[:user_id]).display_name
+					- else
+						crowdfunded community action
 				.clear
 			= yield
 		%footer

@@ -7,3 +7,9 @@ bin-release/
 .flexProperties
 .settings/
 .project
+tmp
+log
+
+config/config.yml
+
+tmp/pids/server.pid

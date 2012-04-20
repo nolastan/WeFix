@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120420041958) do
+ActiveRecord::Schema.define(:version => 20120420183215) do
 
   create_table "requests", :force => true do |t|
     t.integer  "remote_id"
@@ -28,6 +28,19 @@ ActiveRecord::Schema.define(:version => 20120420041958) do
     t.string   "media_url"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "image_remote_url"
+  end
+
+  create_table "users", :force => true do |t|
+    t.integer  "remote_id"
+    t.string   "token"
+    t.string   "display_name"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end
