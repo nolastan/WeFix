@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  remote_id: 1
+  token: MyString
+  status: MyString
+  service_name: MyString
+  service_id: 1
+  description: MyText
+  city_update_datetime: MyString
+  requested_datetime: MyString
+  address: MyString
+  lat: MyString
+  long: MyString
+  media_url: MyString
+
+two:
+  remote_id: 1
+  token: MyString
+  status: MyString
+  service_name: MyString
+  service_id: 1
+  description: MyText
+  city_update_datetime: MyString
+  requested_datetime: MyString
+  address: MyString
+  lat: MyString
+  long: MyString
+  media_url: MyString

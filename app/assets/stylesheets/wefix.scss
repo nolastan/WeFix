@@ -1,0 +1,118 @@
+$graffiti_color: red;
+$sign_color: green;
+$other_color: blue;
+@mixin gradient_inverse($color, $amount: 3%) {
+	background-image: linear-gradient(bottom, lighten($color, $amount), darken($color, $amount));
+	background-image: -o-linear-gradient(bottom, lighten($color, $amount), darken($color, $amount));
+	background-image: -moz-linear-gradient(bottom, lighten($color, $amount), darken($color, $amount));
+	background-image: -webkit-linear-gradient(bottom, lighten($color, $amount), darken($color, $amount));
+	background-image: -ms-linear-gradient(bottom, lighten($color, $amount), darken($color, $amount));
+	background-image: -webkit-gradient(linear, left bottom, left top, lighten($color, $amount), darken($color, $amount));
+}
+@mixin gradient($color, $amount: 3%) {
+	background-image: linear-gradient(bottom, darken($color, $amount), lighten($color, $amount));
+	background-image: -o-linear-gradient(bottom, darken($color, $amount), lighten($color, $amount));
+	background-image: -moz-linear-gradient(bottom, darken($color, $amount), lighten($color, $amount));
+	background-image: -webkit-linear-gradient(bottom, darken($color, $amount), lighten($color, $amount));
+	background-image: -ms-linear-gradient(bottom, darken($color, $amount), lighten($color, $amount));
+	background-image: -webkit-gradient(linear, left bottom, left top, darken($color, $amount), lighten($color, $amount));
+}
+
+@mixin shadow($width: 5px, $color: #000, $x: 0px, $y: 0px){
+	-moz-box-shadow: $x $y $width $color;
+	-webkit-box-shadow: $x $y $width $color; 
+	box-shadow: $x $y $width $color;
+}
+
+@mixin inner-shadow($width: 5px, $color: #000, $x: 0px, $y: 0px){
+	-moz-box-shadow: inset $x $y $width $color;
+	-webkit-box-shadow: inset $x $y $width $color; 
+	box-shadow: inset $x $y $width $color;
+}
+
+
+@mixin rounded-corner($radius){
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;	
+}
+ul.requests{
+	padding:0;
+	li{
+		font-size: 80%;
+		display:inline-block;
+		padding: 7px;
+		margin: 7px;
+		list-style-type:none;
+		width: 180px;
+		vertical-align: top;
+		border: 1px solid #fff;
+		text-align:center;
+		overflow:hidden;
+		.image{
+			width: 100%;
+			height: 150px;
+			overflow:hidden;
+			margin-bottom: 1ex;
+			vertical-align: center;
+			position: relative;
+			img{
+				margin-bottom: 1ex;
+				max-width: 120%;
+			}
+			.buttons{
+				display:none;
+				position: absolute;
+				top: 60px;
+				width: 100%;
+				text-align:center;
+				z-index: 100;
+				margin: 0 auto;
+				font-size: 120%;
+				button{
+					cursor: pointer;
+					opacity: .8;
+					padding: 1ex 1em;
+					margin: 0 .3em;
+				}
+
+				button:hover{
+					opacity: 1;
+				}
+			}
+		}
+
+		.time{
+			display:inline-block;
+			float:right;
+			color: #666;
+		}
+		p.description{
+			clear:both;
+			padding: .5ex 0;
+			height: 5ex;
+			text-align:left;
+		}
+		.service{
+			font-size: 90%;
+			display:inline-block;
+			@include rounded-corner(5px);
+			padding: .5ex .5em;
+			color: #fff;
+			font-weight: 700;
+			float:left;
+		}
+		.service.other{ background-color: $other_color; }
+		.service.sign{ background-color: $sign_color; }
+		.service.graffiti{ background-color: $graffiti_color; }
+
+	}
+	li:hover{
+		background-color: #efefef;
+		border: 1px dotted #ccc;
+		.image{
+			.buttons{
+				display: block;
+			}
+		}
+	}
+}

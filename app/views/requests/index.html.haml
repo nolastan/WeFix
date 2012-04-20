@@ -1,0 +1,19 @@
+#content
+	%h1 Requests
+	%ul.requests
+		- @requests.each do |request|
+			%li 
+				.image
+					%img{:src=> request.media_url}
+					.buttons
+						%button.view View
+						%button.flag Flag
+				.service{:class=>request.service_name}= request.service_name
+				.time= time_ago_in_words(request.requested_datetime).gsub("about ", "") + " ago"
+				%p.description= request.description
+				
+%nav.sidebar
+	%ul
+		%li One
+		%li Two
+		%li Three

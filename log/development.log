@@ -1,0 +1,1085 @@
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateRequests (20120420041958)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "requests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "remote_id" integer, "token" varchar(255), "status" varchar(255), "service_name" varchar(255), "service_id" integer, "description" text, "city_update_datetime" varchar(255), "requested_datetime" varchar(255), "address" varchar(255), "lat" varchar(255), "long" varchar(255), "media_url" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120420041958')
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("requests")
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (13.7ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", nil], ["city_update_datetime", nil], ["created_at", Fri, 20 Apr 2012 04:35:31 UTC +00:00], ["description", nil], ["lat", nil], ["long", nil], ["media_url", nil], ["remote_id", 101000410518], ["requested_datetime", nil], ["service_id", nil], ["service_name", nil], ["status", nil], ["token", nil], ["updated_at", Fri, 20 Apr 2012 04:35:31 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", nil], ["city_update_datetime", nil], ["created_at", Fri, 20 Apr 2012 04:35:31 UTC +00:00], ["description", nil], ["lat", nil], ["long", nil], ["media_url", nil], ["remote_id", 101000410505], ["requested_datetime", nil], ["service_id", nil], ["service_name", nil], ["status", nil], ["token", nil], ["updated_at", Fri, 20 Apr 2012 04:35:31 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", nil], ["city_update_datetime", nil], ["created_at", Fri, 20 Apr 2012 04:35:31 UTC +00:00], ["description", nil], ["lat", nil], ["long", nil], ["media_url", nil], ["remote_id", 101000410362], ["requested_datetime", nil], ["service_id", nil], ["service_name", nil], ["status", nil], ["token", nil], ["updated_at", Fri, 20 Apr 2012 04:35:31 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", nil], ["city_update_datetime", nil], ["created_at", Fri, 20 Apr 2012 04:35:31 UTC +00:00], ["description", nil], ["lat", nil], ["long", nil], ["media_url", nil], ["remote_id", 101000410356], ["requested_datetime", nil], ["service_id", nil], ["service_name", nil], ["status", nil], ["token", nil], ["updated_at", Fri, 20 Apr 2012 04:35:31 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", nil], ["city_update_datetime", nil], ["created_at", Fri, 20 Apr 2012 04:35:31 UTC +00:00], ["description", nil], ["lat", nil], ["long", nil], ["media_url", nil], ["remote_id", 101000410172], ["requested_datetime", nil], ["service_id", nil], ["service_name", nil], ["status", nil], ["token", nil], ["updated_at", Fri, 20 Apr 2012 04:35:31 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", nil], ["city_update_datetime", nil], ["created_at", Fri, 20 Apr 2012 04:35:31 UTC +00:00], ["description", nil], ["lat", nil], ["long", nil], ["media_url", nil], ["remote_id", 101000410105], ["requested_datetime", nil], ["service_id", nil], ["service_name", nil], ["status", nil], ["token", nil], ["updated_at", Fri, 20 Apr 2012 04:35:31 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", nil], ["city_update_datetime", nil], ["created_at", Fri, 20 Apr 2012 04:35:31 UTC +00:00], ["description", nil], ["lat", nil], ["long", nil], ["media_url", nil], ["remote_id", 101000410076], ["requested_datetime", nil], ["service_id", nil], ["service_name", nil], ["status", nil], ["token", nil], ["updated_at", Fri, 20 Apr 2012 04:35:31 UTC +00:00]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[36mRequest Load (0.3ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410518 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mUPDATE "requests" SET "token" = '4f908b980882cfa2e80070c5', "updated_at" = '2012-04-20 04:37:11.307554' WHERE "requests"."id" = 3[0m
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410505 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "token" = '4f907d520882cfa2e800708f', "updated_at" = '2012-04-20 04:37:11.328097' WHERE "requests"."id" = 4[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410362 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "token" = '4f90528a0882cfa2e800702a', "updated_at" = '2012-04-20 04:37:11.331571' WHERE "requests"."id" = 5[0m
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mRequest Load (0.3ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410356 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "token" = '4f9051ac0882cfa2e8007018', "updated_at" = '2012-04-20 04:37:11.335082' WHERE "requests"."id" = 6[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.3ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410172 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "token" = '4f90211f0882cfa2e8006f9b', "updated_at" = '2012-04-20 04:37:11.338998' WHERE "requests"."id" = 7[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410105 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "token" = '4f900fb50882cfa2e8006f3b', "updated_at" = '2012-04-20 04:37:11.342527' WHERE "requests"."id" = 8[0m
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410076 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "token" = '4f9007650882cfa2e8006f17', "updated_at" = '2012-04-20 04:37:11.345657' WHERE "requests"."id" = 9[0m
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mRequest Load (0.3ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410518 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mUPDATE "requests" SET "status" = '4f908b980882cfa2e80070c5', "service_name" = 'Graffiti', "service_id" = 4, "description" = 'On back o electric panel for street lights', "city_update_datetime" = '2012-04-19T18:03:23-04:00', "requested_datetime" = '2012-04-19T18:03:04-04:00', "address" = 'Maverick St, Boston', "lat" = '42.36953512624', "long" = '-71.0375840214965', "media_url" = 'https://mayors24.cityofboston.gov/attachments/report/4f908b980882cfa2e80070c5/photo/report.jpg', "updated_at" = '2012-04-20 04:38:36.625127' WHERE "requests"."id" = 3[0m
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410505 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mUPDATE "requests" SET "status" = '4f907d520882cfa2e800708f', "service_name" = 'Graffiti', "service_id" = 4, "city_update_datetime" = '2012-04-19T17:02:30-04:00', "requested_datetime" = '2012-04-19T17:02:10-04:00', "address" = 'Commercial St, Boston', "lat" = '42.3674484110163', "long" = '-71.0582065769358', "media_url" = 'https://mayors24.cityofboston.gov/attachments/report/4f907d520882cfa2e800708f/photo/report.jpg', "updated_at" = '2012-04-20 04:38:36.644737' WHERE "requests"."id" = 4[0m
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410362 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "status" = '4f90528a0882cfa2e800702a', "service_name" = 'Graffiti', "service_id" = 4, "description" = 'Dock Square Garage on Commercial and Clinton', "city_update_datetime" = '2012-04-19T13:59:50-04:00', "requested_datetime" = '2012-04-19T13:59:38-04:00', "address" = 'John F Fitzgerald Surface Rd, Boston', "lat" = '42.3612706410162', "long" = '-71.0546060465938', "media_url" = 'https://mayors24.cityofboston.gov/attachments/report/4f90528a0882cfa2e800702a/photo/report.jpg', "updated_at" = '2012-04-20 04:38:36.648965' WHERE "requests"."id" = 5[0m
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410356 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "status" = '4f9051ac0882cfa2e8007018', "service_name" = 'Graffiti', "service_id" = 4, "city_update_datetime" = '2012-04-19T13:56:10-04:00', "requested_datetime" = '2012-04-19T13:55:56-04:00', "address" = '683 Canterbury St, Roslindale', "lat" = '42.2854014253638', "long" = '-71.1098292098111', "media_url" = 'https://mayors24.cityofboston.gov/attachments/report/4f9051ac0882cfa2e8007018/photo/report.jpg', "updated_at" = '2012-04-20 04:38:36.652289' WHERE "requests"."id" = 6[0m
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410172 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "status" = '4f90211f0882cfa2e8006f9b', "service_name" = 'Graffiti', "service_id" = 4, "description" = 'Graffiti on electrical box and brick fence at Huntington and Francis', "city_update_datetime" = '2012-04-19T10:29:14-04:00', "requested_datetime" = '2012-04-19T10:28:47-04:00', "address" = 'Huntington Ave, Boston', "lat" = '42.3344005072592', "long" = '-71.104779196985', "media_url" = 'https://mayors24.cityofboston.gov/attachments/report/4f90211f0882cfa2e8006f9b/photo/report.jpg', "updated_at" = '2012-04-20 04:38:36.656128' WHERE "requests"."id" = 7[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410105 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = '4f900fb50882cfa2e8006f3b', "service_name" = 'Graffiti', "service_id" = 4, "description" = 'At west newton street---phone circuit box needs to have graffiti removed. Belongs to Verizon.', "city_update_datetime" = '2012-04-19T09:14:51-04:00', "requested_datetime" = '2012-04-19T09:14:29-04:00', "address" = '474 Columbus Ave, Boston', "lat" = '42.3430354753903', "long" = '-71.078466223619', "media_url" = 'https://mayors24.cityofboston.gov/attachments/report/4f900fb50882cfa2e8006f3b/photo/report.jpg', "updated_at" = '2012-04-20 04:38:36.659780' WHERE "requests"."id" = 8[0m
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410076 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "status" = '4f9007650882cfa2e8006f17', "service_name" = 'Graffiti', "service_id" = 4, "city_update_datetime" = '2012-04-19T08:39:18-04:00', "requested_datetime" = '2012-04-19T08:39:01-04:00', "address" = '571 Columbus Ave, Boston', "lat" = '42.340850355143', "long" = '-71.0815830343133', "media_url" = 'https://mayors24.cityofboston.gov/attachments/report/4f9007650882cfa2e8006f17/photo/report.jpg', "updated_at" = '2012-04-20 04:38:36.663142' WHERE "requests"."id" = 9[0m
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410518 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410505 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410362 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410356 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410172 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.1ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410105 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410076 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[36mRequest Load (0.3ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410518 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410505 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410362 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410356 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410172 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410105 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410076 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410524 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (38.9ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "International Pl, Boston"], ["city_update_datetime", "2012-04-19T18:40:53-04:00"], ["created_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00], ["description", "Taxi sign and no parking sign facing the wrong way...can't see it from car"], ["lat", "42.3564044"], ["long", "-71.0518978"], ["media_url", nil], ["remote_id", 101000410524], ["requested_datetime", "2012-04-19T18:40:36-04:00"], ["service_id", 4], ["service_name", "Damaged Sign"], ["status", "4f9094640882cfa2e80070f7"], ["token", "4f9094640882cfa2e80070f7"], ["updated_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410499 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "49 N Margin St, Boston"], ["city_update_datetime", "2012-04-19T16:49:18-04:00"], ["created_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00], ["description", "Sign belong in between 50 & 56"], ["lat", "42.3651991199246"], ["long", "-71.0567010692557"], ["media_url", "https://mayors24.cityofboston.gov/attachments/report/4f907a3c0882cfa2e800706f/photo/report.jpg"], ["remote_id", 101000410499], ["requested_datetime", "2012-04-19T16:49:00-04:00"], ["service_id", 4], ["service_name", "Damaged Sign"], ["status", "4f907a3c0882cfa2e800706f"], ["token", "4f907a3c0882cfa2e800706f"], ["updated_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410294 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "Old Colony Ave, Boston"], ["city_update_datetime", "2012-04-19T12:42:28-04:00"], ["created_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00], ["description", "Sign is upsides down and it's getting loose donor might fall."], ["lat", "42.3349378331978"], ["long", "-71.05531582617"], ["media_url", "https://mayors24.cityofboston.gov/attachments/report/4f9040630882cfa2e8006ff5/photo/report.jpg"], ["remote_id", 101000410294], ["requested_datetime", "2012-04-19T12:42:11-04:00"], ["service_id", 4], ["service_name", "Damaged Sign"], ["status", "4f9040630882cfa2e8006ff5"], ["token", "4f9040630882cfa2e8006ff5"], ["updated_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410267 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "714-716 Saratoga St, Boston"], ["city_update_datetime", "2012-04-19T12:13:05-04:00"], ["created_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00], ["description", "Stop sign has been removed at 4 way intersection"], ["lat", "42.3832554091163"], ["long", "-71.0187357757902"], ["media_url", "https://mayors24.cityofboston.gov/attachments/report/4f90397f0882cfa2e8006fde/photo/report.jpg"], ["remote_id", 101000410267], ["requested_datetime", "2012-04-19T12:12:47-04:00"], ["service_id", 4], ["service_name", "Damaged Sign"], ["status", "4f90397f0882cfa2e8006fde"], ["token", "4f90397f0882cfa2e8006fde"], ["updated_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410078 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "33 N Margin St, Boston"], ["city_update_datetime", "2012-04-19T08:39:54-04:00"], ["created_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00], ["description", nil], ["lat", "42.364498470018"], ["long", "-71.0566579364902"], ["media_url", "https://mayors24.cityofboston.gov/attachments/report/4f90078c0882cfa2e8006f25/photo/report.jpg"], ["remote_id", 101000410078], ["requested_datetime", "2012-04-19T08:39:40-04:00"], ["service_id", 4], ["service_name", "Damaged Sign"], ["status", "4f90078c0882cfa2e8006f25"], ["token", "4f90078c0882cfa2e8006f25"], ["updated_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.3ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410564 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "130 Brooks St, Boston"], ["city_update_datetime", "2012-04-19T23:31:33-04:00"], ["created_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00], ["description", "Due to trash violations, bags open and spread debris all over the neighborhood. Please ticket the trash violators of East Boston."], ["lat", "42.3783700358065"], ["long", "-71.0348310604362"], ["media_url", "https://mayors24.cityofboston.gov/attachments/report/4f90d88b0882cfa2e8007131/photo/report.jpg"], ["remote_id", 101000410564], ["requested_datetime", "2012-04-19T23:31:23-04:00"], ["service_id", 4], ["service_name", "Other"], ["status", "4f90d88b0882cfa2e8007131"], ["token", "4f90d88b0882cfa2e8007131"], ["updated_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.3ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410563 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "130 Brooks St, Boston"], ["city_update_datetime", "2012-04-19T23:29:09-04:00"], ["created_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00], ["description", "Please clean"], ["lat", "42.3783746944944"], ["long", "-71.0348625483728"], ["media_url", "https://mayors24.cityofboston.gov/attachments/report/4f90d7fc0882cfa2e8007123/photo/report.jpg"], ["remote_id", 101000410563], ["requested_datetime", "2012-04-19T23:29:00-04:00"], ["service_id", 4], ["service_name", "Other"], ["status", "4f90d7fc0882cfa2e8007123"], ["token", "4f90d7fc0882cfa2e8007123"], ["updated_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.3ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410519 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "1672 Washington St, Boston"], ["city_update_datetime", "2012-04-19T18:03:36-04:00"], ["created_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00], ["description", "I appreciate that the city reported that the owners of Hite TV had been cited and ordered to power wash the paint off the sidewalk. However, it's been two weeks and they have not complied. Please enforce."], ["lat", "42.3373963877878"], ["long", "-71.0754541027472"], ["media_url", "https://mayors24.cityofboston.gov/attachments/report/4f908bac0882cfa2e80070d5/photo/report.jpg"], ["remote_id", 101000410519], ["requested_datetime", "2012-04-19T18:03:24-04:00"], ["service_id", 4], ["service_name", "Other"], ["status", "4f908bac0882cfa2e80070d5"], ["token", "4f908bac0882cfa2e80070d5"], ["updated_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410515 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "1672 Washington St, Boston"], ["city_update_datetime", "2012-04-19T17:38:13-04:00"], ["created_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00], ["description", "I appreciate that the city reported that it cited the owners of Hite Tv and ordered them to powerwash the paint off the sidewalk. However, it's been two weeks since then and they have not complied. Please enforce."], ["lat", "42.3374043184535"], ["long", "-71.0754302391251"], ["media_url", "https://mayors24.cityofboston.gov/attachments/report/4f9085ba0882cfa2e80070b1/photo/report.jpg"], ["remote_id", 101000410515], ["requested_datetime", "2012-04-19T17:38:02-04:00"], ["service_id", 4], ["service_name", "Other"], ["status", "4f9085ba0882cfa2e80070b1"], ["token", "4f9085ba0882cfa2e80070b1"], ["updated_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410508 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "Upton St, Boston"], ["city_update_datetime", "2012-04-19T17:16:46-04:00"], ["created_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00], ["description", "Street cleaning was either not done or not done well today on my street as there is garbage all over the street. This is especially annoying as I circled the neighborhood for 30 minutes this morning looking for a legal parking spot so that my car would not be towed."], ["lat", "42.3420416039514"], ["long", "-71.0717743635996"], ["media_url", "https://mayors24.cityofboston.gov/attachments/report/4f9080b20882cfa2e80070a0/photo/report.jpg"], ["remote_id", 101000410508], ["requested_datetime", "2012-04-19T17:16:34-04:00"], ["service_id", 4], ["service_name", "Other"], ["status", "4f9080b20882cfa2e80070a0"], ["token", "4f9080b20882cfa2e80070a0"], ["updated_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410238 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "150-152 Church St Boston, MA 02132"], ["city_update_datetime", "2012-04-19T11:42:34-04:00"], ["created_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00], ["description", "this spot near the corner of weld st and church st needs a new tree. Thank you."], ["lat", "42.293396"], ["long", "-71.149464"], ["media_url", "https://mayors24.cityofboston.gov/attachments/report/4f90325b0882cfa2e8006fcb/photo/Report.jpg"], ["remote_id", 101000410238], ["requested_datetime", "2012-04-19T11:42:19-04:00"], ["service_id", 4], ["service_name", "Other"], ["status", "4f90325b0882cfa2e8006fcb"], ["token", "4f90325b0882cfa2e8006fcb"], ["updated_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410228 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "Boylston St, Boston"], ["city_update_datetime", "2012-04-19T11:27:58-04:00"], ["created_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00], ["description", "Seems to be a problem with lights in Fenway. Crazy traffic midday no game..."], ["lat", "42.3445930555416"], ["long", "-71.0976698170816"], ["media_url", "https://mayors24.cityofboston.gov/attachments/report/4f902ef20882cfa2e8006fbc/photo/other.jpg"], ["remote_id", 101000410228], ["requested_datetime", "2012-04-19T11:27:46-04:00"], ["service_id", 4], ["service_name", "Other"], ["status", "4f902ef20882cfa2e8006fbc"], ["token", "4f902ef20882cfa2e8006fbc"], ["updated_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410160 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "166 Brooks St, Boston"], ["city_update_datetime", "2012-04-19T10:15:51-04:00"], ["created_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00], ["description", "Overflowing trash can. Two days after pick up. Same place that I asked for additional trash bins at for the other corners in the past. Please empty more often or install additional trashcans. Overflow blows in wind and makes East Boston look trashy, literally. \n\nThanks!"], ["lat", "42.3793264828164"], ["long", "-71.0354167264331"], ["media_url", "https://mayors24.cityofboston.gov/attachments/report/4f901e090882cfa2e8006f8c/photo/report.jpg"], ["remote_id", 101000410160], ["requested_datetime", "2012-04-19T10:15:37-04:00"], ["service_id", 4], ["service_name", "Other"], ["status", "4f901e090882cfa2e8006f8c"], ["token", "4f901e090882cfa2e8006f8c"], ["updated_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410157 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "22-36 School St Boston, MA 02129"], ["city_update_datetime", "2012-04-19T10:13:24-04:00"], ["created_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00], ["description", "Trees require pruning down School Street."], ["lat", "42.377405"], ["long", "-71.064964"], ["media_url", "https://mayors24.cityofboston.gov/attachments/report/4f901d7a0882cfa2e8006f7e/photo/Report.jpg"], ["remote_id", 101000410157], ["requested_datetime", "2012-04-19T10:13:14-04:00"], ["service_id", 4], ["service_name", "Other"], ["status", "4f901d7a0882cfa2e8006f7e"], ["token", "4f901d7a0882cfa2e8006f7e"], ["updated_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410156 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "268 Bremen St, Boston"], ["city_update_datetime", "2012-04-19T10:12:39-04:00"], ["created_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00], ["description", "Trash violation. Owner should be ticketed. Same owner that has the broken TV in front of the house that I reported yesterday."], ["lat", "42.3753367759548"], ["long", "-71.0314817977744"], ["media_url", "https://mayors24.cityofboston.gov/attachments/report/4f901d4b0882cfa2e8006f70/photo/report.jpg"], ["remote_id", 101000410156], ["requested_datetime", "2012-04-19T10:12:27-04:00"], ["service_id", 4], ["service_name", "Other"], ["status", "4f901d4b0882cfa2e8006f70"], ["token", "4f901d4b0882cfa2e8006f70"], ["updated_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410139 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "163 Ruggles St, Boston"], ["city_update_datetime", "2012-04-19T09:51:15-04:00"], ["created_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00], ["description", "Multiple pieces of metal in roadway on Ruggles St, on the side closer to the T station. Please remove!"], ["lat", "42.3356516170127"], ["long", "-71.0903671011329"], ["media_url", nil], ["remote_id", 101000410139], ["requested_datetime", "2012-04-19T09:50:58-04:00"], ["service_id", 4], ["service_name", "Other"], ["status", "4f9018420882cfa2e8006f5f"], ["token", "4f9018420882cfa2e8006f5f"], ["updated_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.3ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410134 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "20 Gloucester St Boston, MA 02115"], ["city_update_datetime", "2012-04-19T09:47:48-04:00"], ["created_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00], ["description", "water leak for sprinklers on comm ave mall nrth side near gloucester sr"], ["lat", "42.350096"], ["long", "-71.08454"], ["media_url", "https://mayors24.cityofboston.gov/attachments/report/4f9017760882cfa2e8006f50/photo/Report.jpg"], ["remote_id", 101000410134], ["requested_datetime", "2012-04-19T09:47:34-04:00"], ["service_id", 4], ["service_name", "Other"], ["status", "4f9017760882cfa2e8006f50"], ["token", "4f9017760882cfa2e8006f50"], ["updated_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410052 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "15 Reedsdale St, Boston"], ["city_update_datetime", "2012-04-19T07:54:08-04:00"], ["created_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00], ["description", "Two signs on street say Monday street cleaning. This one says Thursday. Which is correct?"], ["lat", "42.3517016821592"], ["long", "-71.1296399960338"], ["media_url", "https://mayors24.cityofboston.gov/attachments/report/4f8ffcd50882cfa2e8006f00/photo/report.jpg"], ["remote_id", 101000410052], ["requested_datetime", "2012-04-19T07:53:57-04:00"], ["service_id", 4], ["service_name", "Other"], ["status", "4f8ffcd50882cfa2e8006f00"], ["token", "4f8ffcd50882cfa2e8006f00"], ["updated_at", Fri, 20 Apr 2012 04:43:30 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[36mRequest Load (0.3ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410518 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.3ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410505 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410362 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.4ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410356 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mRequest Load (0.3ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410172 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.3ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410105 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410076 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410524 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410499 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.1ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410294 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410267 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.1ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410078 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410564 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410563 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410500 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (15.4ms)[0m  [1mINSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", "249 Ruggles St, Boston"], ["city_update_datetime", "2012-04-19T21:24:16-04:00"], ["created_at", Fri, 20 Apr 2012 04:44:24 UTC +00:00], ["description", "Dead pigeon."], ["lat", "42.3372620623953"], ["long", "-71.0880818591184"], ["media_url", "https://mayors24.cityofboston.gov/attachments/report/4f907a4f0882cfa2e800707e/photo/report.jpg"], ["remote_id", 101000410500], ["requested_datetime", "2012-04-19T16:49:19-04:00"], ["service_id", 4], ["service_name", "Other"], ["status", "4f907a4f0882cfa2e800707e"], ["token", "4f907a4f0882cfa2e800707e"], ["updated_at", Fri, 20 Apr 2012 04:44:24 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.3ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410519 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410515 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410508 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410221 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "585 Comm Ave, Boston"], ["city_update_datetime", "2012-04-19T13:57:13-04:00"], ["created_at", Fri, 20 Apr 2012 04:44:24 UTC +00:00], ["description", "Reports:10100041016 and 1010510019. Closed due to inability to recognize that the cars were parked in the bike lane. Please record as such. Thank you."], ["lat", "42.3492115046785"], ["long", "-71.0989917803835"], ["media_url", nil], ["remote_id", 101000410221], ["requested_datetime", "2012-04-19T11:14:47-04:00"], ["service_id", 4], ["service_name", "Other"], ["status", "4f902be70882cfa2e8006fb7"], ["token", "4f902be70882cfa2e8006fb7"], ["updated_at", Fri, 20 Apr 2012 04:44:24 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410238 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410228 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.1ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410037 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "30 Taft St, Boston"], ["city_update_datetime", "2012-04-19T10:48:36-04:00"], ["created_at", Fri, 20 Apr 2012 04:44:24 UTC +00:00], ["description", "Car blocking driveway. Silver toyota corrolla."], ["lat", "42.3174039666172"], ["long", "-71.0585590804931"], ["media_url", "https://mayors24.cityofboston.gov/attachments/report/4f8ff39e0882cfa2e8006ed8/photo/report.jpg"], ["remote_id", 101000410037], ["requested_datetime", "2012-04-19T07:14:38-04:00"], ["service_id", 4], ["service_name", "Other"], ["status", "4f8ff39e0882cfa2e8006ed8"], ["token", "4f8ff39e0882cfa2e8006ed8"], ["updated_at", Fri, 20 Apr 2012 04:44:24 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410160 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410157 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.1ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410156 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410139 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410134 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410040 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "requests" ("address", "city_update_datetime", "created_at", "description", "lat", "long", "media_url", "remote_id", "requested_datetime", "service_id", "service_name", "status", "token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", "61 Monument Ave Charlestown, MA 02129"], ["city_update_datetime", "2012-04-19T09:09:24-04:00"], ["created_at", Fri, 20 Apr 2012 04:44:24 UTC +00:00], ["description", "bunker hill monument grounds needs mowing"], ["lat", "42.376071"], ["long", "-71.060929"], ["media_url", "https://mayors24.cityofboston.gov/attachments/report/4f8ff6560882cfa2e8006eea/photo/Report.jpg"], ["remote_id", 101000410040], ["requested_datetime", "2012-04-19T07:26:14-04:00"], ["service_id", 4], ["service_name", "Other"], ["status", "4f8ff6560882cfa2e8006eea"], ["token", "4f8ff6560882cfa2e8006eea"], ["updated_at", Fri, 20 Apr 2012 04:44:24 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410052 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410518 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.427572' WHERE "requests"."id" = 3[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410505 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.465021' WHERE "requests"."id" = 4[0m
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410362 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.468436' WHERE "requests"."id" = 5[0m
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410356 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.471532' WHERE "requests"."id" = 6[0m
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410172 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.474702' WHERE "requests"."id" = 7[0m
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410105 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.477874' WHERE "requests"."id" = 8[0m
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410076 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.480996' WHERE "requests"."id" = 9[0m
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410524 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.484336' WHERE "requests"."id" = 10[0m
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410499 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.487447' WHERE "requests"."id" = 11[0m
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410294 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.490665' WHERE "requests"."id" = 12[0m
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410267 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.494200' WHERE "requests"."id" = 13[0m
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410078 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.497203' WHERE "requests"."id" = 14[0m
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410564 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.500350' WHERE "requests"."id" = 15[0m
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410563 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.503031' WHERE "requests"."id" = 16[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410500 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.506243' WHERE "requests"."id" = 28[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410519 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.509291' WHERE "requests"."id" = 17[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410515 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.512424' WHERE "requests"."id" = 18[0m
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410508 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.515496' WHERE "requests"."id" = 19[0m
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410221 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.519063' WHERE "requests"."id" = 29[0m
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410238 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.522262' WHERE "requests"."id" = 20[0m
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410228 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.525597' WHERE "requests"."id" = 21[0m
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410037 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.528992' WHERE "requests"."id" = 30[0m
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410160 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.532435' WHERE "requests"."id" = 22[0m
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410157 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.535641' WHERE "requests"."id" = 23[0m
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410156 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.538697' WHERE "requests"."id" = 24[0m
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410139 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.542143' WHERE "requests"."id" = 25[0m
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410134 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.545650' WHERE "requests"."id" = 26[0m
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410040 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.548609' WHERE "requests"."id" = 31[0m
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410052 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = NULL, "updated_at" = '2012-04-20 04:44:57.551985' WHERE "requests"."id" = 27[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.3ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410518 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.476327' WHERE "requests"."id" = 3[0m
+  [1m[35m (24.1ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410505 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.516547' WHERE "requests"."id" = 4[0m
+  [1m[35m (22.5ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410362 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.541706' WHERE "requests"."id" = 5[0m
+  [1m[35m (23.1ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410356 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.567139' WHERE "requests"."id" = 6[0m
+  [1m[35m (111.5ms)[0m  commit transaction
+  [1m[36mRequest Load (0.4ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410172 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.682264' WHERE "requests"."id" = 7[0m
+  [1m[35m (9.4ms)[0m  commit transaction
+  [1m[36mRequest Load (0.3ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410105 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.695403' WHERE "requests"."id" = 8[0m
+  [1m[35m (3.3ms)[0m  commit transaction
+  [1m[36mRequest Load (0.3ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410076 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.701902' WHERE "requests"."id" = 9[0m
+  [1m[35m (3.6ms)[0m  commit transaction
+  [1m[36mRequest Load (0.3ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410524 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.708665' WHERE "requests"."id" = 10[0m
+  [1m[35m (3.9ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410499 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.715124' WHERE "requests"."id" = 11[0m
+  [1m[35m (3.7ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410294 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.721164' WHERE "requests"."id" = 12[0m
+  [1m[35m (3.4ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410267 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.726982' WHERE "requests"."id" = 13[0m
+  [1m[35m (3.8ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410078 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.733321' WHERE "requests"."id" = 14[0m
+  [1m[35m (3.4ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410564 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.739157' WHERE "requests"."id" = 15[0m
+  [1m[35m (3.6ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410563 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.745166' WHERE "requests"."id" = 16[0m
+  [1m[35m (3.6ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410500 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "status" = 'closed', "updated_at" = '2012-04-20 04:45:32.751151' WHERE "requests"."id" = 28[0m
+  [1m[35m (3.6ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410519 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.757368' WHERE "requests"."id" = 17[0m
+  [1m[35m (3.4ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410515 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.763446' WHERE "requests"."id" = 18[0m
+  [1m[35m (3.8ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410508 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.769662' WHERE "requests"."id" = 19[0m
+  [1m[35m (3.6ms)[0m  commit transaction
+  [1m[36mRequest Load (0.3ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410221 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mUPDATE "requests" SET "status" = 'closed', "updated_at" = '2012-04-20 04:45:32.776272' WHERE "requests"."id" = 29[0m
+  [1m[35m (3.4ms)[0m  commit transaction
+  [1m[36mRequest Load (0.3ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410238 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.783156' WHERE "requests"."id" = 20[0m
+  [1m[35m (3.3ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410228 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.789795' WHERE "requests"."id" = 21[0m
+  [1m[35m (4.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410037 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "status" = 'closed', "updated_at" = '2012-04-20 04:45:32.796714' WHERE "requests"."id" = 30[0m
+  [1m[35m (3.7ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410160 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.802961' WHERE "requests"."id" = 22[0m
+  [1m[35m (3.9ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410157 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.809207' WHERE "requests"."id" = 23[0m
+  [1m[35m (4.0ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410156 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.815643' WHERE "requests"."id" = 24[0m
+  [1m[35m (31.2ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410139 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.849222' WHERE "requests"."id" = 25[0m
+  [1m[35m (3.7ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410134 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.855490' WHERE "requests"."id" = 26[0m
+  [1m[35m (3.7ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410040 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "requests" SET "status" = 'closed', "updated_at" = '2012-04-20 04:45:32.861993' WHERE "requests"."id" = 31[0m
+  [1m[35m (3.5ms)[0m  commit transaction
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."remote_id" = 101000410052 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "requests" SET "status" = 'open', "updated_at" = '2012-04-20 04:45:32.867966' WHERE "requests"."id" = 27[0m
+  [1m[35m (4.0ms)[0m  commit transaction
+
+
+Started GET "/requests" for 127.0.0.1 at 2012-04-19 23:49:47 -0500
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.4ms)[0m  [1mSELECT "requests".* FROM "requests" [0m
+  Rendered requests/index.html.erb within layouts/application (62.0ms)
+Compiled requests.css  (23ms)  (pid 3586)
+Compiled scaffolds.css  (52ms)  (pid 3586)
+Compiled application.css  (99ms)  (pid 3586)
+Compiled jquery.js  (3ms)  (pid 3586)
+Compiled jquery_ujs.js  (0ms)  (pid 3586)
+Compiled requests.js  (139ms)  (pid 3586)
+Compiled application.js  (226ms)  (pid 3586)
+Completed 200 OK in 546ms (Views: 528.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-19 23:49:49 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2012-04-19 23:49:49 -0500
+Served asset /requests.css - 200 OK (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-04-19 23:49:49 -0500
+Served asset /scaffolds.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-19 23:49:49 -0500
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-19 23:49:49 -0500
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2012-04-19 23:49:49 -0500
+Served asset /requests.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-19 23:49:49 -0500
+Served asset /application.js - 304 Not Modified (10ms)
+
+
+Started GET "/requests" for 127.0.0.1 at 2012-04-19 23:50:36 -0500
+Processing by RequestsController#index as HTML
+  [1m[35mRequest Load (0.8ms)[0m  SELECT "requests".* FROM "requests" 
+  Rendered requests/index.html.haml within layouts/application (8.9ms)
+Completed 500 Internal Server Error in 15ms
+
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    3: 	%ul.requests
+    4: 		- @requests.each do |request|
+    5: 			%li 
+    6: 				- unless @services[request.service_id].nil?
+    7: 					- service = @services[request.service_id]
+    8: 					.group= service.group
+    9: 				.image
+  app/views/requests/index.html.haml:6:in `block in _app_views_requests_index_html_haml___4417615577903926413_70140013998960'
+  app/views/requests/index.html.haml:4:in `each'
+  app/views/requests/index.html.haml:4:in `_app_views_requests_index_html_haml___4417615577903926413_70140013998960'
+
+
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.6ms)
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.5ms)
+
+
+Started GET "/requests" for 127.0.0.1 at 2012-04-19 23:50:37 -0500
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.5ms)[0m  [1mSELECT "requests".* FROM "requests" [0m
+  Rendered requests/index.html.haml within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    3: 	%ul.requests
+    4: 		- @requests.each do |request|
+    5: 			%li 
+    6: 				- unless @services[request.service_id].nil?
+    7: 					- service = @services[request.service_id]
+    8: 					.group= service.group
+    9: 				.image
+  app/views/requests/index.html.haml:6:in `block in _app_views_requests_index_html_haml___4417615577903926413_70140013998960'
+  app/views/requests/index.html.haml:4:in `each'
+  app/views/requests/index.html.haml:4:in `_app_views_requests_index_html_haml___4417615577903926413_70140013998960'
+
+
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.3ms)
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.1ms)
+
+
+Started GET "/requests" for 127.0.0.1 at 2012-04-19 23:51:55 -0500
+Processing by RequestsController#index as HTML
+  [1m[35mRequest Load (0.6ms)[0m  SELECT "requests".* FROM "requests" 
+  Rendered requests/index.html.haml within layouts/application (130.4ms)
+Completed 500 Internal Server Error in 135ms
+
+ActionView::Template::Error (undefined method `service_group' for #<#<Class:0x007f957b99f800>:0x007f957d7ec0d8>):
+    9: 					.buttons
+    10: 						%button.view View
+    11: 						%button.flag Flag
+    12: 				.service{:class=>service_group(request.service_name)}= service_group(request.service_name)
+    13: 				.time= time_ago_in_words(request.requested_datetime).gsub("about ", "") + " ago"
+    14: 				%p.description= snippet(request.description, 10)
+    15: 				
+  app/views/requests/index.html.haml:12:in `block in _app_views_requests_index_html_haml___4417615577903926413_70140016154500'
+  app/views/requests/index.html.haml:4:in `each'
+  app/views/requests/index.html.haml:4:in `_app_views_requests_index_html_haml___4417615577903926413_70140016154500'
+
+
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.2ms)
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.1ms)
+
+
+Started GET "/requests" for 127.0.0.1 at 2012-04-19 23:52:11 -0500
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.5ms)[0m  [1mSELECT "requests".* FROM "requests" [0m
+  Rendered requests/index.html.haml within layouts/application (136.6ms)
+Completed 500 Internal Server Error in 141ms
+
+ActionView::Template::Error (undefined method `service_group' for #<#<Class:0x007f957b99f800>:0x007f957bca14b8>):
+    9: 					.buttons
+    10: 						%button.view View
+    11: 						%button.flag Flag
+    12: 				.service{:class=>request.service_name}= service_group(request.service_name)
+    13: 				.time= time_ago_in_words(request.requested_datetime).gsub("about ", "") + " ago"
+    14: 				%p.description= snippet(request.description, 10)
+    15: 				
+  app/views/requests/index.html.haml:12:in `block in _app_views_requests_index_html_haml___4417615577903926413_70140001845640'
+  app/views/requests/index.html.haml:4:in `each'
+  app/views/requests/index.html.haml:4:in `_app_views_requests_index_html_haml___4417615577903926413_70140001845640'
+
+
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.2ms)
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.7ms)
+
+
+Started GET "/requests" for 127.0.0.1 at 2012-04-19 23:52:19 -0500
+Processing by RequestsController#index as HTML
+  [1m[35mRequest Load (0.7ms)[0m  SELECT "requests".* FROM "requests" 
+  Rendered requests/index.html.haml within layouts/application (168.8ms)
+Completed 500 Internal Server Error in 175ms
+
+ActionView::Template::Error (undefined method `snippet' for #<#<Class:0x007f957b99f800>:0x007f957d1fd938>):
+    11: 						%button.flag Flag
+    12: 				.service{:class=>request.service_name}= request.service_name
+    13: 				.time= time_ago_in_words(request.requested_datetime).gsub("about ", "") + " ago"
+    14: 				%p.description= snippet(request.description, 10)
+    15: 				
+    16: %nav.sidebar
+    17: 	%ul
+  app/views/requests/index.html.haml:14:in `block in _app_views_requests_index_html_haml___4417615577903926413_70140013008700'
+  app/views/requests/index.html.haml:4:in `each'
+  app/views/requests/index.html.haml:4:in `_app_views_requests_index_html_haml___4417615577903926413_70140013008700'
+
+
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (39.6ms)
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (44.7ms)
+
+
+Started GET "/requests" for 127.0.0.1 at 2012-04-19 23:52:33 -0500
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.6ms)[0m  [1mSELECT "requests".* FROM "requests" [0m
+  Rendered requests/index.html.haml within layouts/application (23.9ms)
+Completed 200 OK in 34ms (Views: 30.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-19 23:52:33 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-19 23:52:33 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-19 23:52:33 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2012-04-19 23:52:33 -0500
+Served asset /requests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-19 23:52:33 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-04-19 23:52:33 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2012-04-19 23:52:33 -0500
+Served asset /requests.js - 304 Not Modified (0ms)
+
+
+Started GET "/requests" for 127.0.0.1 at 2012-04-19 23:54:08 -0500
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.6ms)[0m  [1mSELECT "requests".* FROM "requests" [0m
+  Rendered requests/index.html.haml within layouts/application (26.7ms)
+Compiled template.css  (79ms)  (pid 3628)
+Compiled wefix.css  (39ms)  (pid 3628)
+Compiled application.css  (137ms)  (pid 3628)
+Compiled template.js  (0ms)  (pid 3628)
+Compiled application.js  (10ms)  (pid 3628)
+Completed 200 OK in 334ms (Views: 316.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-19 23:54:10 -0500
+Served asset /application.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/wefix.css?body=1" for 127.0.0.1 at 2012-04-19 23:54:10 -0500
+Served asset /wefix.css - 200 OK (2ms)
+
+
+Started GET "/assets/template.css?body=1" for 127.0.0.1 at 2012-04-19 23:54:10 -0500
+Served asset /template.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-19 23:54:10 -0500
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/template.js?body=1" for 127.0.0.1 at 2012-04-19 23:54:10 -0500
+Served asset /template.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-19 23:54:10 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-19 23:54:10 -0500
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/black_linen_v2.png" for 127.0.0.1 at 2012-04-19 23:54:10 -0500
+Served asset /black_linen_v2.png - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/black_linen_v2.png"):
+  actionpack (3.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.0) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.0) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.0) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.0) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.0) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.0) lib/action_dispatch/middleware/static.rb:53:in `call'
+  railties (3.2.0) lib/rails/engine.rb:479:in `call'
+  railties (3.2.0) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.0) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/stan/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/stan/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/stan/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/requests" for 127.0.0.1 at 2012-04-19 23:54:28 -0500
+Processing by RequestsController#index as HTML
+  [1m[35mRequest Load (0.5ms)[0m  SELECT "requests".* FROM "requests" 
+  Rendered requests/index.html.haml within layouts/application (17.2ms)
+Completed 500 Internal Server Error in 33ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::WeFix):
+    7: 	%body
+    8: 		#container.wide
+    9: 			%header
+    10: 				%h1= WeFix
+    11: 				%h2 crowdfunded community action
+    12: 				.clear
+    13: 			= yield
+  app/views/layouts/application.html.haml:10:in `_app_views_layouts_application_html_haml__2054477698371700539_70357308722980'
+
+
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (35.4ms)
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (40.4ms)
+
+
+Started GET "/requests" for 127.0.0.1 at 2012-04-19 23:54:41 -0500
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.3ms)[0m  [1mSELECT "requests".* FROM "requests" [0m
+  Rendered requests/index.html.haml within layouts/application (10.3ms)
+Completed 500 Internal Server Error in 24ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::WeFix):
+    7: 	%body
+    8: 		#container.wide
+    9: 			%header
+    10: 				%h1= WeFix
+    11: 				%h2 crowdfunded community action
+    12: 				.clear
+    13: 			= yield
+  app/views/layouts/application.html.haml:10:in `_app_views_layouts_application_html_haml__2054477698371700539_70357324973380'
+
+
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.1ms)
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.2ms)
+
+
+Started GET "/requests" for 127.0.0.1 at 2012-04-19 23:54:53 -0500
+Processing by RequestsController#index as HTML
+  [1m[35mRequest Load (0.3ms)[0m  SELECT "requests".* FROM "requests" 
+  Rendered requests/index.html.haml within layouts/application (10.6ms)
+Completed 200 OK in 22ms (Views: 19.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-19 23:54:53 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/template.css?body=1" for 127.0.0.1 at 2012-04-19 23:54:53 -0500
+Served asset /template.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-19 23:54:53 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wefix.css?body=1" for 127.0.0.1 at 2012-04-19 23:54:53 -0500
+Served asset /wefix.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-19 23:54:53 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/template.js?body=1" for 127.0.0.1 at 2012-04-19 23:54:53 -0500
+Served asset /template.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-19 23:54:53 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/black_linen_v2.png" for 127.0.0.1 at 2012-04-19 23:54:53 -0500
+Served asset /black_linen_v2.png - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/black_linen_v2.png"):
+  actionpack (3.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.0) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.0) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.0) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.0) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.0) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.0) lib/action_dispatch/middleware/static.rb:53:in `call'
+  railties (3.2.0) lib/rails/engine.rb:479:in `call'
+  railties (3.2.0) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.0) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/stan/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/stan/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/stan/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/requests" for 127.0.0.1 at 2012-04-19 23:55:32 -0500
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (3.8ms)[0m  [1mSELECT "requests".* FROM "requests" [0m
+  Rendered requests/index.html.haml within layouts/application (56.1ms)
+Completed 200 OK in 120ms (Views: 89.9ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-19 23:55:32 -0500
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/template.css?body=1" for 127.0.0.1 at 2012-04-19 23:55:32 -0500
+Served asset /template.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/template.js?body=1" for 127.0.0.1 at 2012-04-19 23:55:32 -0500
+Served asset /template.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-19 23:55:32 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-19 23:55:32 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-19 23:55:32 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/wefix.css?body=1" for 127.0.0.1 at 2012-04-19 23:55:32 -0500
+Served asset /wefix.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/black_linen_v2.png" for 127.0.0.1 at 2012-04-19 23:55:32 -0500
+Served asset /black_linen_v2.png - 404 Not Found (10ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/black_linen_v2.png"):
+  actionpack (3.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.0) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.0) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.0) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.0) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.0) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.0) lib/action_dispatch/middleware/static.rb:53:in `call'
+  railties (3.2.0) lib/rails/engine.rb:479:in `call'
+  railties (3.2.0) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.0) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/stan/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/stan/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/stan/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/requests" for 127.0.0.1 at 2012-04-19 23:58:42 -0500
+Processing by RequestsController#index as HTML
+  [1m[35mRequest Load (0.4ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."status" = 'open'
+  Rendered requests/index.html.haml within layouts/application (28.6ms)
+Completed 200 OK in 62ms (Views: 36.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/template.css?body=1" for 127.0.0.1 at 2012-04-19 23:58:42 -0500
+Served asset /template.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wefix.css?body=1" for 127.0.0.1 at 2012-04-19 23:58:42 -0500
+Served asset /wefix.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-19 23:58:42 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/template.js?body=1" for 127.0.0.1 at 2012-04-19 23:58:42 -0500
+Served asset /template.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-19 23:58:42 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-19 23:58:42 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-19 23:58:42 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/black_linen_v2.png" for 127.0.0.1 at 2012-04-19 23:58:43 -0500
+Served asset /black_linen_v2.png - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/black_linen_v2.png"):
+  actionpack (3.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.0) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.0) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.0) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.0) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.0) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.0) lib/action_dispatch/middleware/static.rb:53:in `call'
+  railties (3.2.0) lib/rails/engine.rb:479:in `call'
+  railties (3.2.0) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.0) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/stan/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/stan/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/stan/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/requests" for 127.0.0.1 at 2012-04-19 23:59:39 -0500
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.7ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."status" = 'open'[0m
+  Rendered requests/index.html.haml within layouts/application (18.7ms)
+Compiled wefix.css  (55ms)  (pid 3628)
+Compiled application.css  (1ms)  (pid 3628)
+Completed 200 OK in 150ms (Views: 149.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/template.css?body=1" for 127.0.0.1 at 2012-04-19 23:59:39 -0500
+Served asset /template.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wefix.css?body=1" for 127.0.0.1 at 2012-04-19 23:59:39 -0500
+Served asset /wefix.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-19 23:59:39 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-19 23:59:39 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/template.js?body=1" for 127.0.0.1 at 2012-04-19 23:59:39 -0500
+Served asset /template.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-19 23:59:39 -0500
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-19 23:59:39 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/black_linen_v2.png" for 127.0.0.1 at 2012-04-19 23:59:39 -0500
+Served asset /black_linen_v2.png - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/black_linen_v2.png"):
+  actionpack (3.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.0) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.0) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.0) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.0) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.0) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.0) lib/action_dispatch/middleware/static.rb:53:in `call'
+  railties (3.2.0) lib/rails/engine.rb:479:in `call'
+  railties (3.2.0) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.0) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/stan/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/stan/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/stan/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+  Rendered /Users/stan/.rvm/gems/ruby-1.9.2-p290@rails311/gems/actionpack-3.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
