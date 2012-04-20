@@ -23,6 +23,20 @@ task :sync_requests => :environment do
 	end
 		
 	requests.each do |request|
+
+    # Fill in missing service names
+    if(request.service_name == "Other" && request.description != nil)
+  	  trash_words = ['gargabe', 'trash', 'clean']
+  	  if(trash_words.any? {|word| request.description.downcase.include?(word)})
+  	    request.service_name = "Trash"
+  	  end
+
+  	  plant_words = ['tree', 'bush', 'trim', 'plant']
+  	  if(plant_words.any? {|word| request.description.downcase.include?(word)})
+  	    request.service_name = "Landscape"
+  	  end
+	  end
+	  
 	  Request.find_or_initialize_by_remote_id(request.service_request_id).update_attributes({
 	    :token => request.token, 
 	    :status => request.status, 
