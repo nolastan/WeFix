@@ -12,7 +12,8 @@
 					- if(cookies[:user_id] != nil)
 						= "Logged in as " + User.find(cookies[:user_id]).display_name
 					- else
-						crowdfunded community action
+						%a{:href => 'https://sandbox-wefix0001.taskrabbitdev.com/api/authorize?client_id=bF4O8pr2Q9f2OID2VocZJEgwMYCn834Qs3j8cmOp'}
+							Login
 				.clear
 			= yield
 		%footer

@@ -6,8 +6,8 @@
 				.image
 					%img{:src=> request.media_url}
 					.buttons
-						%button.view View
-						%button.flag Flag
+						%a.view.button{:href => url_for(request)} View
+						%a.flag.button Flag
 				.service{:class=>request.service_name}= request.service_name
 				.time= time_ago_in_words(request.requested_datetime).gsub("about ", "") + " ago"
 				%p.description= request.description

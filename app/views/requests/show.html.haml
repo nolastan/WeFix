@@ -1,1 +1,8 @@
-Hi
+.image
+	%img{:src=> @request.media_url}
+	.buttons
+		%button.flag Flag
+		%button.post Post to Taskrabbit
+.service{:class=>@request.service_name}= @request.service_name
+.time= time_ago_in_words(@request.requested_datetime).gsub("about ", "") + " ago"
+%p.description= @request.description

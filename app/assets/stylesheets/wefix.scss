@@ -68,14 +68,14 @@ ul.requests{
 				z-index: 100;
 				margin: 0 auto;
 				font-size: 120%;
-				button{
+				a{
 					cursor: pointer;
 					opacity: .8;
-					padding: 1ex 1em;
+					padding: .5ex .5em;
 					margin: 0 .3em;
 				}
 
-				button:hover{
+				a:hover{
 					opacity: 1;
 				}
 			}

@@ -208,7 +208,9 @@ div.pic{
 }
 
 /* ----------------- buttons ----------------- */
-button, button.disabled:hover{
+a.button, a.button.disabled:hover{
+  color: #000;
+  text-decoration: none;
 	cursor: pointer;
 	border: 1px solid #aaa;
 	background: #efefef;
@@ -219,18 +221,18 @@ button, button.disabled:hover{
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 }
-button:hover{
+a.button:hover{
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ddd', endColorstr='#eee');
 	background: -webkit-gradient(linear, left top, left bottom, from(#ddd), to(#eee));
 	background: -moz-linear-gradient(top,  #ddd,  #eee);
 
 }
-button.disabled, button.disabled:hover{
+a.button.disabled, a.button.disabled:hover{
 	cursor:default;
 	background: #ddd;
 	color: #888;
 }
-button.active, button.active:hover{
+a.button.active, a.button.active:hover{
 	cursor: default;
 /* 	@include gradient-inverse(lighten($red, 20%), 5%); */
 	color: white;

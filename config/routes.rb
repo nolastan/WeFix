@@ -1,4 +1,5 @@
 Wefix2::Application.routes.draw do
+  match 'requests/:id/remote_post' => 'requests#remote_post'
   resources :requests
   match 'callback' => 'user#login'
 
