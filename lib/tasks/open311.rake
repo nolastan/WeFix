@@ -6,7 +6,7 @@ task :sync_requests => :environment do
 	end
 	
 	end_date = Time.now.strftime '%Y-%m-%dT%H:%M:%S'
-	start_date = (Time.now - 1 * 86400).strftime '%Y-%m-%dT%H:%M:%S'
+	start_date = (Time.now - 3 * 86400).strftime '%Y-%m-%dT%H:%M:%S'
 	requests = Array.new
 	
 	requests_raw = Open311.service_requests({"start_date" => start_date, "end_date" => end_date, "service_code" => "4e658b2821ecf3e0a900002f"})
