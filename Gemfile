@@ -9,6 +9,7 @@ group :development, :test do
 	gem 'sqlite3'
 end
 
+gem 'pg'
 gem 'haml'
 gem 'sass'
 gem 'open311', :git => 'git://github.com/codeforamerica/open311.git'
