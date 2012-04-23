@@ -11,10 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120420183215) do
+ActiveRecord::Schema.define(:version => 20120423160347) do
 
   create_table "requests", :force => true do |t|
-    t.integer  "remote_id"
+    t.string   "remote_id"
     t.string   "token"
     t.string   "status"
     t.string   "service_name"

@@ -11,8 +11,9 @@ class RequestsController < ApplicationController
   def remote_post
     require "uri"
     require "net/http"
+    url = APP_CONFIG['taskrabbit'][:dev_url] || ENV["tr_dev_url"]
 
-    url = URI.parse(APP_CONFIG['taskrabbit'][:dev_url] + "tasks.php?access_token=" + User.find(cookies[:user_id]).token)
+    post_url = URI.parse(url + "tasks.php?access_token=" + User.find(cookies[:user_id]).token)
     params = {
       "task" => {
         "name" => "Dog walking",
@@ -25,8 +26,8 @@ class RequestsController < ApplicationController
     }
     
     # @request = Request.find(params[:id])
-    print "POSTING TO " + APP_CONFIG['taskrabbit'][:url] + "tasks?access_token=" + User.find(cookies[:user_id]).token
-    x = Net::HTTP.post_form(url, params)
+    print "POSTING TO " + post_url + "tasks?access_token=" + User.find(cookies[:user_id]).token
+    x = Net::HTTP.post_form(post_url, params)
     print x
     print x.body
     print "END POST"
