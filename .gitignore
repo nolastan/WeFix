@@ -13,3 +13,5 @@ log
 config/config.yml
 
 tmp/pids/server.pid
+
+log/development.log

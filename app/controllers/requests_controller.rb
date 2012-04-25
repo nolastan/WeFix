@@ -11,7 +11,7 @@ class RequestsController < ApplicationController
   def remote_post
     require "uri"
     require "net/http"
-    url =  ENV["tr_dev_url"] || APP_CONFIG['taskrabbit'][:dev_url]
+    url =  ENV["tr_url"] || APP_CONFIG['taskrabbit'][:url]
 
     post_url = URI.parse(url + "tasks.php?access_token=" + User.find(cookies[:user_id]).token)
     params = {
