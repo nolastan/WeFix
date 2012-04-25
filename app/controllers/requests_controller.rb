@@ -21,7 +21,7 @@ class RequestsController < ApplicationController
     }
     @post_url = URI.parse(url + "tasks.php?access_token=" + User.find(cookies[:user_id]).token)
     print @post_url
-    print Net::HTTP.post_form(@post_url, params).body
+    print Net::HTTP::Post.new(@post_url.path)
   end
   
   def remote_post
