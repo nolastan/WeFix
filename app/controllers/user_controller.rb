@@ -4,7 +4,7 @@ class UserController < ApplicationController
   def login
     require 'open-uri'
     require 'json'
-    url = APP_CONFIG['taskrabbit'][:url] || ENV['tr_url']
+    url = ENV['tr_url'] || APP_CONFIG['taskrabbit'][:url]
     
     result = JSON.parse(open(url + "account?access_token=" + params[:access_token]).read)
     remote_info = {}
