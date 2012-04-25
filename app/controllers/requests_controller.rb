@@ -28,7 +28,6 @@ class RequestsController < ApplicationController
     # @request = Request.find(params[:id])
     print "POSTING TO " + post_url + "tasks?access_token=" + User.find(cookies[:user_id]).token
     x = Net::HTTP.post_form(post_url, params)
-    print x
     print x.body
     print "END POST"
   end
