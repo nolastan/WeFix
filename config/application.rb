@@ -55,8 +55,15 @@ module Wefix2
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
-    if(ENV["RAILS_ENV"] == "development")
+    if(ENV["RAILS_ENV"] != "production")
       ::APP_CONFIG = YAML.load_file("#{Rails.root.to_s}/config/config.yml")
     end
+    
+    Taskrabbit.configure do |config|
+      config.client_secret = ENV["tr_secret"] || APP_CONFIG['taskrabbit'][:secret]
+      config.base_uri = "http://sandbox-wefix0001.taskrabbitdev.com"
+    end
+    
+    
   end
 end
