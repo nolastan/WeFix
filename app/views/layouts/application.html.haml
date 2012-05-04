@@ -22,7 +22,9 @@
 							- else
 								%a{:href => 'https://sandbox-wefix0001.taskrabbitdev.com/api/authorize?client_id=bF4O8pr2Q9f2OID2VocZJEgwMYCn834Qs3j8cmOp'}
 									Login
-				.clear
+			#content
+			- if(flash[:error] != nil)
+				.error= flash[:error]
 			= yield
 		%footer
 			%p &copy; 2012 Stanford Rosenthal

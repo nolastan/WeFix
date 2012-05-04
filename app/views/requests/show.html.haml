@@ -1,16 +1,7 @@
-%a{:href => "http://stanfordrosenthal.com/wefix/referer.php"} HERE
-.image
-	%img{:src=> @request.media_url}
-	%a{:href => ""+@request.id.to_s() +"/remote_post"} Post to Taskrabbit
-/ %form{:action => @post_url, :method => "post"}
-/ 	%input{:type => "hidden", :name => "task[name]", :value => @request.service_name}
-/ 	%input{:type => "hidden", :name => "task[named_price]", :value => "20"}
-/ 	%input{:type => "hidden", :name => "task[city_id]", :value => 1}
-/ 	%input{:type => "hidden", :name => "task[name]", :value => @request.service_name}
-/ 	%input{:type => "hidden", :name => "task[description]", :value => @request.description}
-/ 	%input{:type => "hidden", :name => "task[cost_in_cents]", :value => "0"}
-/ 	%input{:type => "hidden", :name => "task[virtual]", :value => "false"}
-/ 	%input{:type => "submit", :value => "Post to Taskrabbit"}
+%img{:src=> @request.media_url}
+%a{:href => ""+@request.id.to_s() +"/remote_post"} Post to Taskrabbit
 .service{:class=>@request.service_name}= @request.service_name
-.time= time_ago_in_words(@request.requested_datetime).gsub("about ", "") + " ago"
+.time= @request.requested_datetime
 %p.description= @request.description
+- if(@request.tr_id != nil)
+	.tr_id= "TR id:" + @request.tr_id
