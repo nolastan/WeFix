@@ -1,7 +1,7 @@
 %a{:href => "http://stanfordrosenthal.com/wefix/referer.php"} HERE
 .image
 	%img{:src=> @request.media_url}
-	%a{:id=>"tr_post"} Post to Taskrabbit
+	%a{:href => ""+@request.id.to_s() +"/remote_post"} Post to Taskrabbit
 / %form{:action => @post_url, :method => "post"}
 / 	%input{:type => "hidden", :name => "task[name]", :value => @request.service_name}
 / 	%input{:type => "hidden", :name => "task[named_price]", :value => "20"}

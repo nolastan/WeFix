@@ -1,16 +1,23 @@
 #content
-	%h1 Requests
+	%h1 Tasks
 	%ul.requests
-		- @requests.each do |request|
+		- @tasks.each do |task|
 			%li 
-				.image
-					%img{:src=> request.media_url}
-					.buttons
-						%a.view.button{:href => url_for(request)} View
-						%a.flag.button Flag
-				.service{:class=>request.service_name}= request.service_name
-				.time= time_ago_in_words(request.requested_datetime).gsub("about ", "") + " ago"
-				%p.description= request.description
+				= @task.name
+
+
+	/ %h1 Requests
+	/ %ul.requests
+	/ 	- @requests.each do |request|
+	/ 		%li 
+	/ 			.image
+	/ 				%img{:src=> request.media_url}
+	/ 				.buttons
+	/ 					%a.view.button{:href => url_for(request)} View
+	/ 					%a.flag.button Flag
+	/ 			.service{:class=>request.service_name}= request.service_name
+	/ 			.time= time_ago_in_words(request.requested_datetime).gsub("about ", "") + " ago"
+	/ 			%p.description= request.description
 				
 %nav.sidebar
 	%ul

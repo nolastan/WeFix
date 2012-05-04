@@ -9,6 +9,13 @@ GIT
       multi_json (~> 1.0)
       multi_xml (~> 0.4)
 
+GIT
+  remote: git://github.com/jrichardlai/taskrabbit.git
+  revision: e0f4b37fee09f0635917e27dc9652a52f3f0e887
+  specs:
+    taskrabbit (0.0.1)
+      api_smith (= 1.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -40,6 +47,9 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     addressable (2.2.7)
+    api_smith (1.0.0)
+      hashie (~> 1.0)
+      httparty
     arel (3.0.2)
     builder (3.0.0)
     coffee-rails (3.2.2)
@@ -61,6 +71,9 @@ GEM
     haml (3.1.4)
     hashie (1.2.0)
     hike (1.2.1)
+    httparty (0.8.3)
+      multi_json (~> 1.0)
+      multi_xml
     i18n (0.6.0)
     journey (1.0.3)
     jquery-rails (2.0.2)
@@ -135,4 +148,5 @@ DEPENDENCIES
   sass
   sass-rails (~> 3.2.3)
   sqlite3
+  taskrabbit!
   uglifier (>= 1.0.3)

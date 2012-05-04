@@ -1,0 +1,30 @@
+%h2 Back projects in your community
+.requests_preview
+	%ul
+		%li
+			- @requests.each do |request|
+				%li 
+					.image
+						%img{:src=> request.media_url}
+						.buttons
+							%a.view.button{:href => url_for(request)} View
+							%a.flag.button Flag
+					.service{:class=>request.service_name}= request.service_name
+					.time= time_ago_in_words(request.requested_datetime).gsub("about ", "") + " ago"
+					%p.description= request.description
+	.map
+		Placeholder
+%nav.home
+	%ul
+		%li.submit
+			%img
+			%h3 Submit a task
+			%p Get something fixed in your neighborhood or community.
+		%li.do
+			%img
+			%h3 Do a task
+			%p Make money while giving back.
+		%li.archive
+			%img
+			%h3 View completed tasks
+			%p See what we've already accomplished.

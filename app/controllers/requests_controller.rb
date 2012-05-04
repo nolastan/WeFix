@@ -13,13 +13,12 @@ class RequestsController < ApplicationController
 
     print url
 
-    post_url = URI.parse(url + "tasks.php?access_token=" + User.find(cookies[:user_id]).token)
+    post_url = url + "tasks"
 
     
-    # @request = Request.find(params[:id])
-    # print "POSTING TO " + post_url + "tasks?access_token=" + User.find(cookies[:user_id]).token
-    print post_url
-    print "\n\n --- END POST --- \n\n"
+    require 'typhoeus'
+    require 'json'
+    request = Typhoeus::Request.post(post_url, :params => {:task => {:name => "My Task", :named_price => 23}}, :headers => {:Authorization => "OAuth " + User.find(cookies[:user_id]).token})
   end
   
 end
