@@ -1,6 +1,13 @@
-$graffiti_color: red;
-$sign_color: green;
-$other_color: blue;
+/* http://kuler.adobe.com/#themeID/1882697 */
+$blue: #243B4A;
+$dgreen: #34734C;
+$lgreen: #9E9D3B;
+$yellow: #E3C553;
+$gray: #E5DBC0;
+
+$graffiti_color: $blue;
+$sign_color: $dgreen;
+$other_color: $yellow;
 @mixin gradient_inverse($color, $amount: 3%) {
 	background-image: linear-gradient(bottom, lighten($color, $amount), darken($color, $amount));
 	background-image: -o-linear-gradient(bottom, lighten($color, $amount), darken($color, $amount));
@@ -35,3 +42,290 @@ $other_color: blue;
 	-moz-border-radius: $radius;
 	-webkit-border-radius: $radius;	
 }
+
+@font-face {
+    font-family: 'ChopdRegular';
+    src: font-url('chopd-regular-webfont.eot');
+    src: font-url('chopd-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('chopd-regular-webfont.woff') format('woff'),
+         font-url('chopd-regular-webfont.ttf') format('truetype'),
+         font-url('chopd-regular-webfont.svg#ChopdRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
+body{
+  font-family: 'PT Sans', sans-serif;
+}
+#content{
+  clear:both;
+}
+h1{
+  font-size: 400%;
+}
+.logo{
+    font-family: 'ChopdRegular', sans-serif;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: .01em;
+    padding: .1em;
+    text-shadow: 0px 2px 3px darken($blue, 20%);
+}
+a.login{
+  @include gradient($gray, 10%);
+  @include rounded-corner(3px);
+  @include shadow(3px, darken($blue, 30%));
+  padding: .5em .5em .4em .5em;
+  text-decoration: none;
+  color: #000;
+  display: inline-block;
+  font-size: 70%;
+}
+a.login:hover{
+  @include gradient($gray, 3%); 
+}
+header{
+  min-height: 4.3em;
+  background-color: $blue;
+  color: white;
+  padding: 7px;
+  background-image: image-url("brillant.png");
+  border-bottom: 1px solid darken($blue, 80%);
+  @include shadow(5px, #aaa, 0, 2px);
+  .logo{
+    float:left;
+    margin-top: 3px;
+    a{
+      color: #fff;
+      text-decoration: none;
+    }
+    a:hover{
+      color: $yellow;
+      text-shadow: none;
+    }
+  }
+  a.login{
+    float:right;
+    margin: 2em 1em;
+  }
+  .city_selector{
+    float:left;
+    margin: 25px 0 0 10px;
+    border: 1px solid lighten($blue, 40%);
+    background-color: lighten($blue, 80%);
+    color: #000;
+    padding: .25em 15px .2em .2em;
+    opacity: .6;
+    font-size: 75%;
+    cursor: default;
+    background-image: image-url('arrow-down.png');
+    background-repeat: no-repeat;
+    background-position: 93% 55%;
+  }
+  .city_selector:hover{
+    opacity: .9;
+  }
+}
+/* Home page */
+#content{
+  margin: 10px;
+  h2{
+    font-size: 200%;
+    font-weight: bold;
+    margin: 1em 0;
+  }
+}
+#content.home.index{
+  text-align:center;
+  .intro{
+    h2{
+      margin: 1em 0;
+      font-size: 300%;
+      font-weight: normal;
+      line-height: 1.3em;
+      .someone, .do_something, .we{
+        font-weight: bold;
+      }
+      .someone{
+        color: $yellow;
+      }
+      .we{
+        color: $dgreen;
+      }
+      .do_something{
+        color: $dgreen;
+      }
+    }
+  }
+  .requests{
+    $height: 150px;
+    overflow: hidden;
+    width: 80%;
+    height: $height;
+    display: inline-block;
+    ul{
+      li{
+       display:inline-block;
+       a{
+         text-decoration: none;
+         color: #fff;
+         img{
+           height: $height;
+         }
+         .service_name{
+           height:23px;
+           background-color: #000;
+           margin-top:-23px; /* @TODO use relative positioning */
+           opacity: .5;
+           text-align: left;
+           p{
+             line-height: 20px;
+             margin-left: 5px;
+             font-size: 80%;
+           }
+         }
+       }
+       a:hover{
+         .service_name{
+           opacity: .8;
+         }
+       }
+      }
+    }
+  }
+  ul.actions{
+    margin-top: 50px;
+    li{
+      display: inline-block;
+      margin: 0 5px;
+      max-width: 25%;
+      padding: 15px;
+      cursor: pointer;
+      @include rounded-corner(10px);
+      img{
+        max-height: 100px;
+      }
+      a{
+        font-size: 200%;
+        font-weight: bold;
+        margin: 1ex 0;
+        color: $blue;
+        display: block;
+        text-decoration: none;
+      }
+      p{
+        margin: .5ex 0;
+      }
+    }
+    li:hover{
+      @include shadow(10px);
+    }
+  }
+}
+#content.requests.index{
+  ul.requests{
+    li:hover, li:active{
+      .info{
+        top: 0;
+        -moz-transition: top 0.5s;
+        -webkit-transition: top 0.5s;
+        -o-transition: top 0.5s;
+        .service{
+          opacity: 1;
+        }
+      }
+    }
+    li{
+      height: 150px;
+      width: 200px;
+      overflow: hidden;
+      float:left;
+      position: relative;
+      cursor: pointer;
+      img{
+        max-width: 250px;
+        max-height: 300px;
+        position:absolute;
+        z-index: -10;
+      }
+      a.info{
+        text-decoration: none;
+        color: #fff;
+        background-image: image-url('crossed_stripes.png');
+        width: 200px;
+        height: 150px;
+        position: absolute;
+        top: 130px;
+        -moz-transition: top 0.5s;
+        -webkit-transition: top 0.5s;
+        -o-transition: top 0.5s;
+        p.description{
+          padding: 5px;
+          color: #fff;
+          overflow: hidden;
+          text-shadow: 0px 0px 3px #000;
+        }
+        .service{
+          color: $yellow;
+          width: 100%;
+          opacity: .7;
+          padding: 3px;
+          height: 15px;
+        }
+      }
+      .service.sign{
+        background-color: darken(red, 25%);
+      }
+      .service.other{
+        background-color: darken(green, 25%);
+      }
+      .service.graffiti{
+        background-color: darken(blue, 25%);
+      }
+      .service.trash{
+        background-color: darken(purple, 25%);
+      }
+      .service.landscape{
+        background-color: darken(#a77, 25%);
+      }
+    }
+  }
+}
+
+/*
+
+.sample{
+  margin: 20px 0;
+  position: relative;
+  $width: 500px;
+  @include rounded-corner(12px);
+  overflow: hidden;
+  width: $width;
+  border: 1px solid #333;
+  img{
+    width: $width;
+    z-index: 0;
+    position: relative;
+  }
+  .caption{
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    opacity: .8;
+    background-color: #333;
+    width: 100%;
+    color: #fff;
+    padding: 7px;
+    h3{
+      font-weight:bold;
+    }
+    h3, p{
+      margin: .5ex 0;
+    }
+    p{
+      font-size: 90%;
+      width: 95%;
+    }
+  }
+}
+*/

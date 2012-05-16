@@ -1,11 +1,11 @@
-%h1 Requests
+%h2 Requests
 %ul.requests
 	- @requests.each do |request|
 		%li 
 			%img{:src=> request.media_url}
-			%a.view{:href => url_for(request)} View
-			.service{:class=>request.service_name}= request.service_name
-			.time= request.requested_datetime
-			%p.description= request.description
-			- if(request.tr_id != nil)
-				.tr_id= "TR id:" + request.tr_id
+			/ .time= request.requested_datetime
+			%a.info{:href => url_for(request)}
+				.service{:class=>request.service_name}= request.service_name
+				%p.description= request.description
+			/ - if(request.tr_id != nil)
+			/ 	.tr_id= "TR id:" + request.tr_id

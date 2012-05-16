@@ -61,7 +61,7 @@ module Wefix2
     
     Taskrabbit.configure do |config|
       config.client_secret = ENV["tr_secret"] || APP_CONFIG['taskrabbit'][:secret]
-      config.base_uri = "http://sandbox-wefix0001.taskrabbitdev.com"
+      config.base_uri = ENV["tr_url"] || APP_CONFIG['taskrabbit'][:url]
     end
     
     
