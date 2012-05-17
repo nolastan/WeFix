@@ -5,6 +5,7 @@ class RequestsController < ApplicationController
 
   def show    
     @request = Request.find(params[:id])
+    @related = Request.where(:status => "open").where("media_url IS NOT NULL").where("service_name == '#{@request.service_name}'").order("requested_datetime DESC").limit(6)
   end
   
   def remote_post

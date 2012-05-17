@@ -1,8 +1,47 @@
-%img{:src=> @request.media_url}
-%a{:href => ""+@request.id.to_s() +"/remote_post"} Post to Taskrabbit
-.service{:class=>@request.service_name}= @request.service_name
-.time= @request.requested_datetime
-%p.description= @request.description
-- if(@request.tr_id != nil)
-	.tr_id= "TR id:" + @request.tr_id
-	.tr_url= "TR url: " + @request.tr_url
+.image
+	%img{:src=> @request.media_url}
+.info
+	%h2= @request.service_name
+	%p.posted= "Proposed #{time_ago(@request.requested_datetime)} at #{@request.address}.".html_safe
+	%p.description= @request.description
+	.actions
+		-if(@request.is_backed?)
+			%a.fund{:href => ""+@request.id.to_s() +"/remote_post"} Post to TaskRabbit
+		-else
+			%a.complete{:href => @request.tr_url} Do this!
+		%a.flag Flag
+		%a.improve Improve this posting
+	.map= image_tag('map.png')
+.activity
+	%h3 Activity
+	%a.comment Add Comment
+	%ul
+		-if(@request.status == 'closed')
+			%li.closed
+				%p.content Completed
+				%p.meta= "By The City of Boston #{time_ago(@request.city_update_datetime)}.".html_safe
+		-if(!@request.is_backed?)
+			%li.funded
+				%p.content Posted to TaskRabbit
+				%p.meta= "By #{@request.tr_user} #{time_ago(@request.tr_post_datetime)}.".html_safe
+		%li.proposed
+			%p.content Proposed
+			%p.meta= "By a Boston resident #{time_ago(@request.requested_datetime)}".html_safe
+.related
+	%h3 Related Proposals
+	%ul.thumbs
+		- @related.each do |request|
+			%li 
+				%img{:src=> request.media_url}
+				%a.info{:href => url_for(request)}
+					.service{:class=>request.service_name}= request.service_name
+					%p.description= fill_description(request).html_safe
+					.more Click for details.
+/ 	
+/ %a{:href => ""+@request.id.to_s() +"/remote_post"} Post to Taskrabbit
+/ .service{:class=>@request.service_name}= @request.service_name
+/ .time= @request.requested_datetime
+/ %p.description= @request.description
+/ - if(@request.tr_id != nil)
+/ 	.tr_id= "TR id:" + @request.tr_id
+/ 	.tr_url= "TR url: " + @request.tr_url

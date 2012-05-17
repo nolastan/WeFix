@@ -12,11 +12,12 @@ digging.png: digging-ae46a6de26af0352956d39307f9f8ef5.png
 digging.svg: digging-aee2bb210ecdd90c153f485bbeb5d755.svg
 lightbulb.png: lightbulb-c539820c59a4d6a28c8866f0b0e932ea.png
 lightbulb.svg: lightbulb-d73c309bc09e12529377f140bb20d8cc.svg
+map.png: map-4f6b70d16fe7f251692fc2ec2d820758.png
 mesh.png: mesh-6721553dd2465ef0fd0d1d091c9b053c.png
 money.png: money-a91b6bd754883ddef9780cca9789060a.png
 money.svg: money-8251b98ffe80515bfe20024d139d9064.svg
 rails.png: rails-782b548cc1ba7f898cdad2d9eb8420d2.png
 tex2res5.png: tex2res5-1c6e80387bb172d139bb9d52d0ca1ec6.png
 tr_icon.png: tr_icon-5d2977d20f1ac92d6decb8b1d256837c.png
-application.js: application-f37538e3f514d7af4e3c5acd2b663ed7.js
-application.css: application-b0d2f4365b6bd9397b3c649a9d158c2b.css
+application.js: application-b08224b31b650a6431ccf5bbdc76913c.js
+application.css: application-1d43f78e849ffa51e1f5760e88288e24.css

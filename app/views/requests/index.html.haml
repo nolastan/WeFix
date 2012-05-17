@@ -1,12 +1,10 @@
-%h2 Requests
+%h2 Fund a Project
+%h3 Select a project to post to Taskrabbit, where it will be completed by trusted and qualified members of the community.
 %ul.requests
 	- @requests.each do |request|
 		%li 
 			%img{:src=> request.media_url}
-			/ .time= request.requested_datetime
 			%a.info{:href => url_for(request)}
 				.service{:class=>request.service_name}= request.service_name
 				%p.description= fill_description(request).html_safe
 				.more Click for details.
-			/ - if(request.tr_id != nil)
-			/ 	.tr_id= "TR id:" + request.tr_id

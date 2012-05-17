@@ -4,7 +4,7 @@
 		= stylesheet_link_tag    "application", :media => "all"
 		= javascript_include_tag "application"
 		/ TODO: why does timeago only work if it's right here?
-		<script src="assets/jquery.timeago.js" type="text/javascript"></script>
+		= javascript_include_tag "jquery.timeago.js"
 		= csrf_meta_tags
 	%body
 		#container.wide
@@ -12,11 +12,11 @@
 				.account
 					- if(cookies[:user_id] != nil)
 						%p.logged_in= "Logged in as " + User.find(cookies[:user_id]).display_name
-						%a.logout{:href => "logout"} Logout
+						%a.logout{:href => url_for(:action => 'logout', :controller => 'user')} Logout
 					- else
 						%a.login{:href => 'https://sandbox-wefix0001.taskrabbitdev.com/api/authorize?client_id=bF4O8pr2Q9f2OID2VocZJEgwMYCn834Qs3j8cmOp'}
 							Login with Taskrabbit
-				%h1.logo= link_to 'Wefix', :controller => 'home', :action => 'index'
+				%h1.logo= link_to 'WeFix', :controller => 'home', :action => 'index'
 				.city_selector
 					Boston
 			#content{:class => "#{controller.controller_name} #{controller.action_name}"}
