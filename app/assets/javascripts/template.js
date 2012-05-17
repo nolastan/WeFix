@@ -1,3 +1,3 @@
 $(document).ready(function(){
-	$("nav.sidebar").css("height", $("#container").height());
+  $('abbr.time_ago').timeago();
 });

@@ -26,7 +26,7 @@ task :sync_requests => :environment do
 
     # Fill in missing service names
     if(request.service_name == "Other" && request.description != nil)
-  	  trash_words = ['gargabe', 'trash', 'clean']
+  	  trash_words = ['garbage', 'trash', 'clean']
   	  if(trash_words.any? {|word| request.description.downcase.include?(word)})
   	    request.service_name = "Trash"
   	  end
