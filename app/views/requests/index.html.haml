@@ -7,5 +7,6 @@
 			%a.info{:href => url_for(request)}
 				.service{:class=>request.service_name}= request.service_name
 				%p.description= request.description
+				.more Click for details.
 			/ - if(request.tr_id != nil)
 			/ 	.tr_id= "TR id:" + request.tr_id

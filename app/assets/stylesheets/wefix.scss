@@ -272,6 +272,14 @@ header{
           padding: 3px;
           height: 15px;
         }
+        .more{
+          font-size: 60%;
+          color: #ccc;
+          text-shadow: 0px 0px 3px #000;
+          position: absolute;
+          right: 5px;
+          bottom: 5px;          
+        }
       }
       .service.sign{
         background-color: darken(red, 25%);
