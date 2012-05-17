@@ -4,12 +4,12 @@ $(document).ready(function(){
   //   window.location = "requests/funded";
   // });
 
-  $("#content.home ul.actions li.propose").click(function(){
-    window.location = "requests/new";
-  });
-
-  // $("#content.home ul.actions li.fund").click(function(){
-  //   window.location = "requests";
+  // $("#content.home ul.actions li.propose").click(function(){
+  //   window.location = "requests/new";
   // });
+
+  $("#content.home ul.actions li.fund").click(function(){
+    window.location = "requests";
+  });
 
 });
