@@ -2,6 +2,7 @@ Wefix2::Application.routes.draw do
   match 'requests/:id/remote_post' => 'requests#remote_post'
   resources :requests
   match 'callback' => 'user#login'
+  match 'logout' => 'user#logout'
   
 
   # The priority is based upon order of creation:

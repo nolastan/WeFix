@@ -24,4 +24,9 @@ class UserController < ApplicationController
     redirect_to :controller => "requests"
   end
   
+  def logout
+    cookies.delete :user_id
+    redirect_to :root
+  end
+  
 end

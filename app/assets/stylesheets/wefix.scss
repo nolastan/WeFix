@@ -63,6 +63,15 @@ body{
 h1{
   font-size: 400%;
 }
+a{
+  color: $blue;
+}
+a:hover{
+  color: darken($blue, 25%);
+}
+a:visited{
+  color: lighten($blue, 25%);
+}
 .logo{
     font-family: 'ChopdRegular', sans-serif;
     font-weight: normal;
@@ -71,19 +80,7 @@ h1{
     padding: .1em;
     text-shadow: 0px 2px 3px darken($blue, 20%);
 }
-a.login{
-  @include gradient($gray, 10%);
-  @include rounded-corner(3px);
-  @include shadow(3px, darken($blue, 30%));
-  padding: .5em .5em .4em .5em;
-  text-decoration: none;
-  color: #000;
-  display: inline-block;
-  font-size: 70%;
-}
-a.login:hover{
-  @include gradient($gray, 3%); 
-}
+
 header{
   min-height: 4.3em;
   background-color: $blue;
@@ -92,21 +89,45 @@ header{
   background-image: image-url("brillant.png");
   border-bottom: 1px solid darken($blue, 80%);
   @include shadow(5px, #aaa, 0, 2px);
+  a, a:visited{
+    color: #fff;
+  }
+  a:hover{
+    color: $yellow;    
+  }
   .logo{
     float:left;
     margin-top: 3px;
     a{
-      color: #fff;
       text-decoration: none;
     }
     a:hover{
-      color: $yellow;
       text-shadow: none;
     }
   }
-  a.login{
+  .account{
     float:right;
-    margin: 2em 1em;
+    margin: 1.6em 1em;
+    p.logged_in{
+      display: inline-block;
+    }
+    a.logout{
+      display: inline-block;
+    }
+    a.login{
+      @include gradient($gray, 10%);
+      @include rounded-corner(3px);
+      @include shadow(3px, darken($blue, 30%));
+      padding: .5em .5em .4em .5em;
+      text-decoration: none;
+      color: #000;
+      display: inline-block;
+      font-size: 70%;
+      margin: 0;
+    }
+    a.login:hover{
+      @include gradient($gray, 3%); 
+    }
   }
   .city_selector{
     float:left;
@@ -291,11 +312,18 @@ header{
         background-color: darken(blue, 25%);
       }
       .service.trash{
-        background-color: darken(purple, 25%);
+        background-color: darken(#ff00ff, 25%);
       }
       .service.landscape{
-        background-color: darken(#a77, 25%);
+        background-color: darken(#00ffff, 25%);
       }
+      .service.drainage{
+        background-color: darken(#FF6600, 25%);
+      }
+      .service.vehicle{
+        background-color: darken(#660099, 10%);
+      }
+
     }
   }
 }
