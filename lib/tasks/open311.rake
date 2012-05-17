@@ -26,15 +26,27 @@ task :sync_requests => :environment do
 
     # Fill in missing service names
     if(request.service_name == "Other" && request.description != nil)
-  	  trash_words = ['garbage', 'trash', 'clean']
+  	  trash_words = ['garbage', 'trash', 'clean', 'litter']
   	  if(trash_words.any? {|word| request.description.downcase.include?(word)})
   	    request.service_name = "Trash"
   	  end
 
-  	  plant_words = ['tree', 'bush', 'trim', 'plant']
+  	  plant_words = ['tree', 'bush', 'trim', 'plant', 'mowed']
   	  if(plant_words.any? {|word| request.description.downcase.include?(word)})
   	    request.service_name = "Landscape"
   	  end
+
+  	  vehicle_words = ['car', 'truck', 'lane', 'parked', 'traffic']
+  	  if(vehicle_words.any? {|word| request.description.downcase.include?(word)})
+  	    request.service_name = "Vehicle"
+  	  end
+
+  	  drainage_words = ['drain', 'clogged', 'flood', 'rain']
+  	  if(drainage_words.any? {|word| request.description.downcase.include?(word)})
+  	    request.service_name = "Drainage"
+  	  end
+
+
 	  end
 	  
 	  Request.find_or_initialize_by_remote_id(request.service_request_id).update_attributes({
