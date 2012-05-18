@@ -12,7 +12,7 @@ class UserController < ApplicationController
       remote_info[r[0]] = r[1]
     end
 	  
-	  user = User.find_or_initialize_by_remote_id(remote_info['id'])      
+    user = User.find_or_initialize_by_remote_id(remote_info['id'])      
     user.update_attributes(
       :remote_id      => remote_info['id'], 
       :display_name   => remote_info['display_name'],
