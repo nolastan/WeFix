@@ -322,7 +322,7 @@ ul.thumbs, ul.requests{
     .service.drainage{
       background-color: darken(#FF6600, 25%);
     }
-    .service.vehicle{
+    .service.traffic{
       background-color: darken(#660099, 10%);
     }
 
@@ -388,7 +388,7 @@ ul.thumbs, ul.requests{
     }
   }
   @media (min-width: 1050px) {
-    .related{
+    .similar{
       display: block;
       position:absolute;
       right: 0;
@@ -401,12 +401,12 @@ ul.thumbs, ul.requests{
   }
   @media (min-width: 1290px) {
     margin: 20px auto;
-    .related{
+    .similar{
       width: 440px;
     }
   }
   @media (max-width: 1050px) {
-    .related{
+    .similar{
       position: relative;
       float: left;
       display: block;
@@ -440,7 +440,7 @@ ul.thumbs, ul.requests{
       }
     }
   }
-  .related{
+  .similar{
     h3{
       margin: 10px;
       font-weight: bold;

@@ -27,10 +27,10 @@
 		%li.proposed
 			%p.content Proposed
 			%p.meta= "By a Boston resident #{time_ago(@request.requested_datetime)}".html_safe
-.related
-	%h3 Related Proposals
+.similar
+	%h3 Similar Proposals
 	%ul.thumbs
-		- @related.each do |request|
+		- @similar.each do |request|
 			%li 
 				%img{:src=> request.media_url}
 				%a.info{:href => url_for(request)}

@@ -36,9 +36,9 @@ task :sync_requests => :environment do
   	    request.service_name = "Landscape"
   	  end
 
-  	  vehicle_words = ['car', 'truck', 'lane', 'parked', 'traffic']
-  	  if(vehicle_words.any? {|word| request.description.downcase.include?(word)})
-  	    request.service_name = "Vehicle"
+  	  traffic_words = ['car', 'truck', 'lane', 'parked', 'traffic']
+  	  if(traffic_words.any? {|word| request.description.downcase.include?(word)})
+  	    request.service_name = "Traffic"
   	  end
 
   	  drainage_words = ['drain', 'clogged', 'flood', 'rain']
