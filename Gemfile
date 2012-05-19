@@ -13,9 +13,8 @@ gem 'pg'
 gem 'haml'
 gem 'sass'
 gem 'taskrabbit', :git => 'git://github.com/jrichardlai/taskrabbit.git'
-
 gem 'open311', :git => 'git://github.com/codeforamerica/open311.git'
-
+gem 'gon'
 
 # Gems used only for assets and not required
 # in production environments by default.

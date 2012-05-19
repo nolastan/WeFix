@@ -68,6 +68,9 @@ GEM
       rack (~> 1.1)
     faraday_middleware (0.8.7)
       faraday (>= 0.7.4, < 0.9)
+    gon (3.0.2)
+      actionpack (>= 2.3.0)
+      json
     haml (3.1.4)
     hashie (1.2.0)
     hike (1.2.1)
@@ -140,6 +143,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  gon
   haml
   jquery-rails
   open311!

@@ -1,0 +1,49 @@
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;key=AIzaSyAR7T2_k4LA1zlfFYLy8jV6Ha6HKbGM1LA"
+          type="text/javascript"></script>
+  <script type="text/javascript">
+  $(document).ready(initialize);
+  $(window).resize(resizeMap);
+  function resizeMap(){
+    $('#map_canvas').height($(window).height() - 110);
+    $('#map_canvas').width($(window).width() - 20);
+  }
+
+  function initialize() {
+    resizeMap();
+    var cityCenter = new google.maps.LatLng(42.353, -71.065);
+    var myOptions = {
+      zoom: 15,
+      center: cityCenter,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+
+    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    var infowindow = new google.maps.InfoWindow();
+    var marker, i;
+
+    for (i = 0; i < gon.requests.length; i++) {
+      var latlng = new google.maps.LatLng(gon.requests[i].lat, gon.requests[i].long);
+              
+      var infowindow = new google.maps.InfoWindow();
+
+      marker = new google.maps.Marker({
+          position: latlng,
+          map: map,
+          title: 'Uluru (Ayers Rock)'
+      });
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function(){
+          infowindow.setContent(
+            "<h3>" + gon.requests[i].service_name + "</h3>" + 
+            "<p>" + gon.requests[i].description +"</p>" + 
+            "<a href='" + gon.requests[i].id + "'>View</a>"
+          );
+          infowindow.open(map,marker);
+        }
+      })(marker, i));
+    }
+  }
+
+
+  </script>
+  <div id="map_canvas" style="width: 500px; height: 300px"></div>

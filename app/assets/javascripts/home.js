@@ -8,7 +8,7 @@ $(document).ready(function(){
   //   window.location = "requests/new";
   // });
 
-  $("#content.home ul.actions li.fund").click(function(){
+  $("body.home ul.actions li.fund").click(function(){
     window.location = "requests";
   });
 

@@ -3,6 +3,10 @@ class RequestsController < ApplicationController
     @requests = Request.where(:status => "open").where("media_url IS NOT NULL").order("requested_datetime DESC")
   end
 
+  def map
+    gon.requests = Request.where(:status => "open").where("media_url IS NOT NULL").order("requested_datetime DESC")
+  end
+
   def show    
     @request = Request.find(params[:id])
     @similar = Request.where(:status => "open").where("media_url IS NOT NULL").where("service_name = '#{@request.service_name}'").order("requested_datetime DESC").limit(6)
