@@ -3,10 +3,9 @@
 		%title WeFix
 		= stylesheet_link_tag    "application", :media => "all"
 		= javascript_include_tag "application"
-		/ TODO: why does timeago only work if it's right here?
-		/ = javascript_include_tag "jquery.timeago.js"
+		= include_gon
 		= csrf_meta_tags
-	%body
+	%body{:class => "#{controller.controller_name} #{controller.action_name}"}
 		#container.wide
 			%header
 				.account
@@ -19,7 +18,7 @@
 				%h1.logo= link_to 'WeFix', :controller => 'home', :action => 'index'
 				.city_selector
 					Boston
-			#content{:class => "#{controller.controller_name} #{controller.action_name}"}
+			#content
 				- if(flash[:error] != nil)
 					.error= flash[:error]
 				= yield

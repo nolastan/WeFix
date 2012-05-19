@@ -159,7 +159,7 @@ header{
 #content{
   margin: 10px;
 }
-#content.home.index{
+body.home.index #content{
   text-align:center;
   .intro{
     h2{
@@ -328,7 +328,12 @@ ul.thumbs, ul.requests{
 
   }
 }
-#content.requests.show{
+body.requests.index #content{
+  a.map{
+    float:right;
+  }
+}
+body.requests.show #content{
   max-width: 1290px;
   margin: 20px;
   position: relative;
