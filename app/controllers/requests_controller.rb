@@ -12,6 +12,14 @@ class RequestsController < ApplicationController
     @similar = Request.where(:status => "open").where("media_url IS NOT NULL").where("service_name = '#{@request.service_name}'").order("requested_datetime DESC").limit(6)
   end
   
+  def funded
+    @requests = Request.where("tr_id IS NOT NULL").where("media_url IS NOT NULL").order("requested_datetime DESC")    
+  end
+  
+  def funded_map
+    gon.requests = Request.where("tr_id IS NOT NULL").where("media_url IS NOT NULL").order("requested_datetime DESC")    
+  end
+  
   def remote_post
     request = Request.find(params[:id])
     user = User.find(cookies[:user_id])

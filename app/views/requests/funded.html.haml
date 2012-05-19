@@ -1,0 +1,11 @@
+= link_to 'View Map', {:controller => 'requests', :action => 'funded_map'}, :class => 'map'
+%h2 Complete a project
+%h3 Select a project to complete.
+%ul.requests
+	- @requests.each do |request|
+		%li 
+			%img{:src=> request.media_url}
+			%a.info{:href => url_for(request)}
+				.service{:class=>request.service_name}= request.service_name
+				%p.description= fill_description(request).html_safe
+				.more Click for details.

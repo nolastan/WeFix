@@ -21,7 +21,7 @@ class UserController < ApplicationController
     
     cookies[:user_id] = user.id
     
-    redirect_to :controller => "requests"
+    redirect_to :back
   end
   
   def logout

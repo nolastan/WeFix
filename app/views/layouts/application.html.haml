@@ -13,7 +13,8 @@
 						%p.logged_in= "Logged in as " + User.find(cookies[:user_id]).display_name
 						%a.logout{:href => url_for(:action => 'logout', :controller => 'user')} Logout
 					- else
-						%a.login{:href => 'https://sandbox-wefix0001.taskrabbitdev.com/api/authorize?client_id=bF4O8pr2Q9f2OID2VocZJEgwMYCn834Qs3j8cmOp'}
+						- key = ENV['tr_key'] || APP_CONFIG['taskrabbit'][:key]
+						%a.login{:href => 'https://sandbox-wefix0001.taskrabbitdev.com/api/authorize?client_id=' + key}
 							Login with Taskrabbit
 				%h1.logo= link_to 'WeFix', :controller => 'home', :action => 'index'
 				.city_selector
