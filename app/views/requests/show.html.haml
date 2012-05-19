@@ -11,7 +11,7 @@
 			%a.complete{:href => @request.tr_url} Do this!
 		%a.flag Flag
 		%a.improve Improve this posting
-	.map= image_tag('map.png')
+	.map= render :partial => "map", :object => @request
 .activity
 	%h3 Activity
 	%a.comment Add Comment
