@@ -11,22 +11,22 @@
 			%a.complete{:href => @request.tr_url} Do this!
 		%a.flag Flag
 		%a.improve Improve this posting
-	.map= render :partial => "map", :object => @request
-.activity
-	%h3 Activity
-	%a.comment Add Comment
-	%ul
-		-if(@request.status == 'closed')
-			%li.closed
-				%p.content Completed
-				%p.meta= "By The City of Boston #{time_ago(@request.city_update_datetime)}.".html_safe
-		-if(!@request.is_backed?)
-			%li.funded
-				%p.content Posted to TaskRabbit
-				%p.meta= "By #{@request.tr_user} #{time_ago(@request.tr_post_datetime)}.".html_safe
-		%li.proposed
-			%p.content Proposed
-			%p.meta= "By a Boston resident #{time_ago(@request.requested_datetime)}".html_safe
+	.activity
+		%h3 Activity
+		%a.comment Add Comment
+		%ul
+			-if(@request.status == 'closed')
+				%li.closed
+					%p.content Completed
+					%p.meta= "By The City of Boston #{time_ago(@request.city_update_datetime)}.".html_safe
+			-if(!@request.is_backed?)
+				%li.funded
+					%p.content Posted to TaskRabbit
+					%p.meta= "By #{@request.tr_user} #{time_ago(@request.tr_post_datetime)}.".html_safe
+			%li.proposed
+				%p.content Proposed
+				%p.meta= "By a Boston resident #{time_ago(@request.requested_datetime)}".html_safe
+.map= render :partial => "map", :object => @request
 .similar
 	%h3 Similar Proposals
 	%ul.thumbs
