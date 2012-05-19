@@ -2,14 +2,8 @@
           type="text/javascript"></script>
   <script type="text/javascript">
   $(document).ready(initialize);
-  $(window).resize(resizeMap);
-  function resizeMap(){
-    $('#map_canvas').height($(window).height() - 110);
-    $('#map_canvas').width($(window).width() - 20);
-  }
 
   function initialize() {
-    resizeMap();
     var cityCenter = new google.maps.LatLng(42.353, -71.065);
     var myOptions = {
       zoom: 15,
@@ -46,4 +40,4 @@
 
 
   </script>
-  <div id="map_canvas" style="width: 500px; height: 300px"></div>
+  <div id="map_canvas" style="top: 100; bottom: 10; left: 10; right: 10; position: absolute"></div>
