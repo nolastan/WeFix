@@ -1,30 +1,18 @@
-.intro
-	%h2 <span class="someone">Someone</span> should really <span class="do_something">do&nbsp;something</span> about that.
-/ .sample
-/ 	=image_tag('bench.jpg')
-/ 	.caption
-/ 		%h3 Uptown bus stop gets a bench.
-/ 		%p Jane S. was tired of standing while waiting for the bus. Neighborhood commuters pooled together $100 for Joe M. to make this beautiful bench.
-.requests
-	%ul
-		- @requests.each do |request|
-			%li
-				%a{:href => url_for(request)}
-					=image_tag(request.media_url)
-					.service_name
-						%p= request.service_name
-
+%h2 <span class="someone">Someone</span> should really<br /><span class="do_something">do&nbsp;something</span> about that.
+= render :partial => "requests/thumbs", :object => @requests
 %ul.actions
 	%li.propose
-		=image_tag('lightbulb.png')
-		%a Propose &raquo;
-		/ %p Identify a problem in your neighborhood.
-		%p Coming soon.
+		%a{:href => 'requests'} 
+			.icon=image_tag('lightbulb.png')
+			%h3 Propose
+			%p Identify a problem in your neighborhood.
 	%li.fund
-		=image_tag('money.png')
-		%a{:href => 'requests'} Fund &raquo;
-		%p Donate directly to a project you care about.
+		%a{:href => 'requests'} 
+			.icon=image_tag('money.png')
+			%h3 Fund
+			%p Donate directly to a project you care about.
 	%li.act
-		=image_tag('digging.png')
-		%a{:href => 'requests/funded'} Act &raquo;
-		%p Improve your community and get paid.
+		%a{:href => 'requests/funded'} 
+			.icon=image_tag('digging.png')
+			%h3 Act
+			%p Improve your community and get paid.

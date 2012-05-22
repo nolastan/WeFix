@@ -15,3 +15,5 @@ config/config.yml
 tmp/pids/server.pid
 
 log/development.log
+
+app/assets/.DS_Store

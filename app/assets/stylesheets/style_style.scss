@@ -1,0 +1,481 @@
+/* http://kuler.adobe.com/#themeID/1882697 */
+$blue: #243B4A;
+$orange: #FF4500;
+$lblue: #3A7296;
+$green: #14712E;
+$lgreen: #549629;
+
+$sign: #C2AE8B;
+$graffiti: #FF765E;
+$trash: #FFD166;
+$landscape: $green;
+$drainage: #B7BDC4;
+$traffic: #FFE5C6;
+$other: #999;
+
+$information-phone: "only screen and (max-width : 320px)";
+
+$small-phone: 320px;
+$regular-phone: 480px;
+$tablet: 480px;
+$monitor: 768px;
+
+@mixin gradient_inverse($color, $amount: 3%) {
+ background-image: linear-gradient(bottom, lighten($color, $amount), darken($color, $amount));
+ background-image: -o-linear-gradient(bottom, lighten($color, $amount), darken($color, $amount));
+ background-image: -moz-linear-gradient(bottom, lighten($color, $amount), darken($color, $amount));
+ background-image: -webkit-linear-gradient(bottom, lighten($color, $amount), darken($color, $amount));
+ background-image: -ms-linear-gradient(bottom, lighten($color, $amount), darken($color, $amount));
+ background-image: -webkit-gradient(linear, left bottom, left top, lighten($color, $amount), darken($color, $amount));
+}
+@mixin gradient($color, $amount: 3%) {
+ background-image: linear-gradient(bottom, darken($color, $amount), lighten($color, $amount));
+ background-image: -o-linear-gradient(bottom, darken($color, $amount), lighten($color, $amount));
+ background-image: -moz-linear-gradient(bottom, darken($color, $amount), lighten($color, $amount));
+ background-image: -webkit-linear-gradient(bottom, darken($color, $amount), lighten($color, $amount));
+ background-image: -ms-linear-gradient(bottom, darken($color, $amount), lighten($color, $amount));
+ background-image: -webkit-gradient(linear, left bottom, left top, darken($color, $amount), lighten($color, $amount));
+}
+
+@mixin shadow($width: 5px, $color: #000, $x: 0px, $y: 0px){
+ -moz-box-shadow: $x $y $width $color;
+ -webkit-box-shadow: $x $y $width $color; 
+ box-shadow: $x $y $width $color;
+}
+
+@mixin inner-shadow($width: 5px, $color: #000, $x: 0px, $y: 0px){
+ -moz-box-shadow: inset $x $y $width $color;
+ -webkit-box-shadow: inset $x $y $width $color; 
+ box-shadow: inset $x $y $width $color;
+}
+
+
+@mixin rounded-corner($radius){
+ -moz-border-radius: $radius;
+ -webkit-border-radius: $radius; 
+}
+
+@font-face {
+    font-family: 'ChopdRegular';
+    src: font-url('chopd-regular-webfont.eot');
+    src: font-url('chopd-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('chopd-regular-webfont.woff') format('woff'),
+         font-url('chopd-regular-webfont.ttf') format('truetype'),
+         font-url('chopd-regular-webfont.svg#ChopdRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
+body{
+  font-family: 'PT Sans', sans-serif;
+  color: #333;
+  background-image: url('groovepaper.png')
+}
+#content{
+  clear:both;
+}
+h1, h2, h3, h4, h5{color: #000; font-weight: bold;}
+h1{font-size: 400%;}
+h2{font-size: 250%;}
+h3{font-size: 150%;}
+a{
+  color: $blue;
+}
+a:hover{
+  color: darken($blue, 25%);
+}
+a:visited{
+  color: lighten($blue, 25%);
+}
+.logo{
+    font-family: 'ChopdRegular', sans-serif;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: .01em;
+    text-shadow: 0px 2px 3px darken($orange, 20%);
+}
+
+// Categories
+$category_color: $blue;
+.sign{ @include gradient(darken($category_color, 0%), 3%);}
+.graffiti{ @include gradient(darken($category_color, 4%), 3%);}
+.trash{ @include gradient(darken($category_color, 8%), 3%);}
+.landscape{ @include gradient(darken($category_color, 12%), 3%);}
+.drainage{ @include gradient(darken($category_color, 16%), 3%);}
+.traffic{ @include gradient(darken($category_color, 20%), 3%);}
+.other{ @include gradient(darken($category_color, 24%), 3%); }
+
+header{
+  height: 3em;
+  color: white;
+  padding: 7px;
+  background-color: $orange;
+  border-bottom: 1px solid darken($orange, 10%);
+  background-image: url('header-bg.png');
+  @include shadow(5px, #aaa, 0, 2px);
+  a, a:visited{
+    color: #fff;
+  }
+  a:hover{
+    color: $orange;    
+  }
+  .logo{
+    float:left;
+    a{
+      text-decoration: none;
+    }
+    a:hover{
+      text-shadow: none;
+    }
+  }
+  .account{
+    margin: .6em .1em;
+    float:right;
+    p.logged_in{
+      display: inline-block;
+    }
+    a.logout{
+      display: inline-block;
+    }
+    a.login{
+      @include gradient(#fafafa, 10%);
+      @include rounded-corner(3px);
+      @include shadow(3px, darken($blue, 30%));
+      padding: .5em .5em .4em .5em;
+      text-decoration: none;
+      color: #000;
+      display: inline-block;
+      font-size: 70%;
+      margin: 0;
+    }
+    a.login:hover{
+      @include gradient(#fafafa, 3%); 
+    }
+  }
+  .city_selector{
+    margin: .8em;
+    float:left;
+    border: 1px solid lighten($blue, 40%);
+    background-color: lighten($blue, 80%);
+    color: #000;
+    padding: .25em 15px .2em .2em;
+    opacity: .6;
+    cursor: default;
+    background-image: image-url('arrow-down.png');
+    background-repeat: no-repeat;
+    background-position: 93% 55%;
+  }
+  .city_selector:hover{
+    opacity: .9;
+  }
+}
+#content{
+  margin: 10px;
+}
+body.home.index #content{
+  text-align:center;
+  h2{
+    margin: .5em 0;
+    font-weight: normal;
+    line-height: 1.3em;
+    .someone, .do_something{
+      font-weight: bold;
+    }
+    .someone{
+      color: $lblue;
+    }
+    .do_something{
+      color: $orange;
+    }
+  }
+  .requests{
+    overflow: hidden;
+    width: 100%;
+    display: inline-block;
+  }
+  ul.thumbs{
+    overflow:hidden;
+    margin: 0 auto;
+  }
+  // All mobile
+  ul.actions{
+    margin-top: 2em;
+    li{
+      a{
+        text-decoration: none;
+      }
+    }
+    @media (max-width: 768) {
+      li.propose .icon{text-align:center;}
+      li{
+        clear: both;
+        text-align: left;
+        margin: 1em;
+        a{
+          @include rounded-corner(1ex);
+          @include gradient(#fff, 1%);
+          background-color: #fff;
+          border: 1px solid #ccc;
+          display: block;
+          height: 3em;
+          padding: .5em;
+          color: #333;
+          .icon{
+            width: 4.5em;
+            float: left;
+            img{
+              height: 3em;
+              margin: 0 .5em;
+            }
+          }
+          h3{
+            margin-top: .4ex;
+            margin-bottom: .1ex;
+            color: #000;
+            font-weight: normal;
+          }
+        }
+        a:hover{
+          @include shadow(10px, #eee, 0, 0);
+          @include gradient-inverse(#fff, 1%);
+        }
+        a:active{
+          background-color: #fafafa;
+        }
+      }
+    }
+    @media (min-width: 768) {
+      
+    }
+  }
+}
+ul.thumbs{
+  li:hover, li:active{
+    .info{
+      top: 0;
+      -moz-transition: top 0.5s;
+      -webkit-transition: top 0.5s;
+      -o-transition: top 0.5s;
+      .service{
+        opacity: 1;
+      }
+    }
+  }
+  li{
+    overflow: hidden;
+    float:left;
+    position: relative;
+    cursor: pointer;
+    height: 9em;
+    img{
+      position:absolute;
+      z-index: 0;
+      max-width: 130%;
+    }
+    a.info{
+      width: 100%;
+      text-decoration: none;
+      text-align: left;
+      background-image: image-url('crossed_stripes.png');
+      position: absolute;
+      -moz-transition: top 0.5s;
+      -webkit-transition: top 0.5s;
+      -o-transition: top 0.5s;
+      p.description{
+        padding: 5px;
+        color: #fff;
+        overflow: hidden;
+        text-shadow: 0px 0px 3px #000;
+        font-size: 75%;
+      }
+      .service{
+        color: #fff;
+        width: 100%;
+        opacity: .7;
+        padding: .3em;
+        height: 1em;
+      }
+      .more{
+        font-size: 60%;
+        color: #ccc;
+        text-shadow: 0px 0px 3px #000;
+        position: absolute;
+        right: 5px;
+        bottom: 5px;          
+      }
+    }
+  }
+}
+body.requests #content{
+  a.map{
+    float:right;
+  }
+}
+body.requests.show #content{
+  max-width: 1290px;
+  margin: 20px;
+  position: relative;
+  .image{
+    float: left;
+    max-width: 380px;
+    margin: 0 20px 20px 0;
+    img{
+      max-width: 380px;
+      border: 1px solid $blue;
+    }
+  }
+  .info{
+    width: 350px;
+    float: left;
+    h2{
+      margin: 0;
+    }
+    p.posted{
+      font-size: 80%;
+      color: #555;
+    }
+    p.description{
+      margin: 1em 0;
+    }
+    
+    .actions{
+      margin: 1.5em 0;
+      a.fund, a.flag, a.complete{
+        padding: 3px 15px;
+        @include gradient(#ddd, 10%);
+        @include rounded-corner(5px);
+        border: 1px solid #aaa;
+        cursor: pointer;
+      }
+      a.fund, a.complete{
+        font-weight: bold;
+        text-decoration: none;
+      }
+      a.flag{
+        opacity: .8;
+        text-decoration: none;
+      }
+      a.fund:hover, a.flag:hover, a.complete:hover{
+        @include gradient-inverse(#ddd, 5%);
+      }
+      a.flag:hover{
+        opacity:1;
+      }
+      a.improve{
+        color: $blue;
+        font-size: 75%;
+      }
+    }
+    .map{
+
+    }
+  }
+  @media (min-width: 1050px) {
+    .similar{
+      display: block;
+      position:absolute;
+      right: 0;
+      top: 0;
+      width: 200px;
+      height: auto;
+      padding: 20px;
+      min-height: 100px;
+    }
+  }
+  @media (min-width: 1300px) {
+    margin: 20px auto;
+    .similar{
+      width: 440px;
+    }
+  }
+  @media (max-width: 1050px) {
+    .similar{
+      position: relative;
+      float: left;
+      display: block;
+      width: 100%;
+      height: 160px;
+      margin: 10px 0;
+      li{
+        float:left;
+        position: relative;
+      }
+    }
+  }
+  .map{
+    clear: both;
+    img{border: 1px solid $blue;}
+  }
+  .activity{
+    h3{
+      font-size: 150%;
+      font-weight: bold;
+      color: #333;
+      margin: 0;
+    }
+    .comment{
+      display: none; // TODO
+    }
+    li{
+      margin: .5em 0;
+      p.meta{
+        margin: .2em 0;
+        font-size: 80%;
+        color: #555;
+      }
+    }
+  }
+  .similar{
+    h3{
+      margin: 10px;
+      font-weight: bold;
+      font-size: 150%;     
+    }
+    ul.thumbs{
+      margin: 0;
+      overflow:hidden;
+      li{
+        margin: 10px;
+      }
+    }
+  }
+  
+}
+
+/*
+
+.sample{
+  margin: 20px 0;
+  position: relative;
+  $width: 500px;
+  @include rounded-corner(12px);
+  overflow: hidden;
+  width: $width;
+  border: 1px solid #333;
+  img{
+    width: $width;
+    z-index: 0;
+    position: relative;
+  }
+  .caption{
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    opacity: .8;
+    background-color: #333;
+    width: 100%;
+    color: #fff;
+    padding: 7px;
+    h3{
+      font-weight:bold;
+    }
+    h3, p{
+      margin: .5ex 0;
+    }
+    p{
+      font-size: 90%;
+      width: 95%;
+    }
+  }
+}
+*/

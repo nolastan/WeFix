@@ -1,0 +1,73 @@
+// Small Mobile
+@media (max-width: 320px) {
+  body{font-size: 50%;}
+  ul.thumbs{
+    $height: 7.5em;
+    $width: 8em;
+    height: $height;
+    width: 3*$width;
+    li{width: $width; height: $height;}
+    li img{ max-height: $height + 7em;}
+    li a.info{top: $height - 1.4em; height: $height;}
+  }
+}
+
+// Regular Mobile
+@media (min-width: 320px) and (max-width: 480px) {
+  body{font-size: 70%;}
+  ul.thumbs{
+    $height: 7em;
+    $width: 9em;
+    height: $height;
+    width: 3*$width;
+    li{width: $width; height: $height;}
+    li img{ max-height: $height + 7em;}
+    li a.info{top: $height - 1.4em; height: $height;}
+    
+  }
+}
+
+// Tablets
+@media (min-width: 480px) {
+  header{
+    .account{
+      margin-top: .9em;
+    }
+  }
+  ul.thumbs{
+    $height: 8em;
+    $width: 9.5em;
+    height: $height;
+    width: 3*$width;
+    li{width: $width; height: $height;}
+    li img{ max-height: $height + 7em;}
+    li a.info{top: $height - 1.4em; height: $height;}
+  }
+}
+
+// Monitors (inherits)
+@media (min-width: 768px) {
+  h2{font-size: 350%;}
+  ul.thumbs{
+    $height: 9em;
+    $width: 10em;
+    width: 4*$width;
+    height: $height;
+    li{width: $width; height: $height;}
+    li img{ max-height: $height + 6.5em;}
+    li a.info{top: $height - 1.4em; height: $height;}
+  }
+}
+// Wide Monitors (inherits)
+  @media (min-width: 1024) {
+    h2{font-size: 350%;}
+    ul.thumbs{
+      $height: 9em;
+      $width: 10em;
+      width: 6*$width;
+      height: $height;
+      li{width: $width; height: $height;}
+      li img{ max-height: $height + 6.5em;}
+      li a.info{top: $height - 1.4em; height: $height;}
+    }
+}

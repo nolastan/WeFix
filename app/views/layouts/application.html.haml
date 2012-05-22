@@ -5,7 +5,7 @@
 		= javascript_include_tag "application"
 		= include_gon
 		= csrf_meta_tags
-		<meta name="viewport" content="width=450px"/>
+		%meta{:name => "viewport", :content => "width=device-width"}
 	%body{:class => "#{controller.controller_name} #{controller.action_name}"}
 		#container.wide
 			%header
