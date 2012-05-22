@@ -272,6 +272,7 @@ ul.thumbs{
   li:hover, li:active{
     .info{
       top: 0;
+      left: 0;
       -moz-transition: top 0.5s;
       -webkit-transition: top 0.5s;
       -o-transition: top 0.5s;
