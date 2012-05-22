@@ -107,7 +107,7 @@ $category_color: $blue;
 
 header{
   height: 3em;
-  color: white;
+  color: #000;
   padding: 7px;
   background-color: $orange;
   border-bottom: 1px solid darken($orange, 10%);
@@ -129,7 +129,7 @@ header{
     }
   }
   .account{
-    margin: .6em .1em;
+    margin: 0 .1em .5em .1em ;
     float:right;
     p.logged_in{
       display: inline-block;
@@ -153,17 +153,18 @@ header{
     }
   }
   .city_selector{
-    margin: .8em;
-    float:left;
-    border: 1px solid lighten($blue, 40%);
-    background-color: lighten($blue, 80%);
-    color: #000;
-    padding: .25em 15px .2em .2em;
-    opacity: .6;
-    cursor: default;
-    background-image: image-url('arrow-down.png');
-    background-repeat: no-repeat;
-    background-position: 93% 55%;
+    float: left;
+    font-family: 'ChopdRegular', sans-serif;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-transform: rotate(-2deg); 
+    -moz-transform: rotate(-2deg);
+    color: #eee;
+    font-size: 160%;
+    background-color: #000;
+    padding: .2em .2em 0 .2em;
+    margin: .4em;
+    @include shadow(.4em, darken($orange, 20%), 0px, 0px)
   }
   .city_selector:hover{
     opacity: .9;
@@ -175,17 +176,12 @@ header{
 body.home.index #content{
   text-align:center;
   h2{
-    margin: .5em 0;
-    font-weight: normal;
-    line-height: 1.3em;
+    color: #222;
+    font-weight: bold;
+    margin: .6em 0;
+    line-height: 1.2em;
     .someone, .do_something{
-      font-weight: bold;
-    }
-    .someone{
-      color: $lblue;
-    }
-    .do_something{
-      color: $orange;
+      color: #000;
     }
   }
   .requests{
@@ -199,27 +195,45 @@ body.home.index #content{
   }
   // All mobile
   ul.actions{
-    margin-top: 2em;
+    margin: 2em auto;
+    li.propose .icon img{margin-left: .5em;}
     li{
+      margin: 1em 0;
       a{
         text-decoration: none;
+        @include rounded-corner(1ex);
+        @include gradient(#fff, 1%);
+        background-color: #fff;
+        border: 1px solid #ccc;
+        display: block;
+        padding: .5em;
+        color: #333;
+        h3{
+          margin-top: .4ex;
+          margin-bottom: .1ex;
+          color: #000;
+          font-weight: normal;
+          text-align: left;
+        }
+        p{
+          text-align: left;
+        }
+      }
+      a:hover{
+        @include shadow(10px, #eee, 0, 0);
+        @include gradient-inverse(#fff, 2%);
+      }
+      a:active{
+        background-color: #fafafa;
       }
     }
     @media (max-width: 768) {
-      li.propose .icon{text-align:center;}
       li{
         clear: both;
         text-align: left;
-        margin: 1em;
+        margin: 2em auto;
+        height: 3em;
         a{
-          @include rounded-corner(1ex);
-          @include gradient(#fff, 1%);
-          background-color: #fff;
-          border: 1px solid #ccc;
-          display: block;
-          height: 3em;
-          padding: .5em;
-          color: #333;
           .icon{
             width: 4.5em;
             float: left;
@@ -228,24 +242,29 @@ body.home.index #content{
               margin: 0 .5em;
             }
           }
-          h3{
-            margin-top: .4ex;
-            margin-bottom: .1ex;
-            color: #000;
-            font-weight: normal;
-          }
-        }
-        a:hover{
-          @include shadow(10px, #eee, 0, 0);
-          @include gradient-inverse(#fff, 1%);
-        }
-        a:active{
-          background-color: #fafafa;
         }
       }
     }
     @media (min-width: 768) {
-      
+      li{
+        a{
+          .icon{
+            text-align: center;
+            img{
+              height: 4.5em;
+              margin: .5em 0;
+            }
+          }
+          p, h3{
+            text-align:center;
+            margin: .5ex 0;
+          }
+        }
+        text-align: left;
+        width: 14em;
+        margin: .5em;
+        display: inline-block;
+      }
     }
   }
 }
@@ -441,41 +460,6 @@ body.requests.show #content{
   }
   
 }
-
-/*
-
-.sample{
-  margin: 20px 0;
-  position: relative;
-  $width: 500px;
-  @include rounded-corner(12px);
-  overflow: hidden;
-  width: $width;
-  border: 1px solid #333;
-  img{
-    width: $width;
-    z-index: 0;
-    position: relative;
-  }
-  .caption{
-    position: absolute;
-    bottom: 0;
-    z-index: 10;
-    opacity: .8;
-    background-color: #333;
-    width: 100%;
-    color: #fff;
-    padding: 7px;
-    h3{
-      font-weight:bold;
-    }
-    h3, p{
-      margin: .5ex 0;
-    }
-    p{
-      font-size: 90%;
-      width: 95%;
-    }
-  }
+footer{
+  clear: both;
 }
-*/
